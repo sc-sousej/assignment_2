@@ -24,7 +24,9 @@ class BookingService:
         with self.lock:
             if hall_id in self.fetch_available_halls(start_time, end_time):
                 booking = Booking(hall_id, start_time, end_time)
-                self.db.bookings.insert_one(booking.__dict__)
+                result = self.db.bookings.insert_one(booking.__dict__)
+                booking.set_booking_id(result.inserted_id)
+                self.db.bookings.update_one({'_id': result.inserted_id}, {'$set': {'booking_id': booking.booking_id}})
                 return "Booking successful"
             else:
                 return "Hall is already booked for the given time slot"
@@ -55,6 +57,7 @@ class BookingService:
     
     
     def fetch_all_booked_halls(self, start_date, end_date):
+
         try:
             # print("w0")
             # start_date_obj = datetime.strptime(start_date, '%Y-%m-%dT%H:%M:%S')
@@ -76,10 +79,10 @@ class BookingService:
             booked_records = []
             for booking in bookings:
                 booked_records.append({
-                    "booking_id": str(booking["_id"]),
+                    "booking_id": booking["booking_id"],
                     "hall_id": booking["hall_id"],
                     "start_time": booking["start_time"],
-                    "end_time": booking["end_time"]
+                    "end_time": booking["end_time"],
                 })
             print("showing records...")
             # print(booked_records)
@@ -90,3 +93,32 @@ class BookingService:
         except Exception as e:
             print(f"An error occurred: {e}")
             return []
+
+    def cancel_booking(self, data):
+        with self.lock:
+            result = self.db.bookings.delete_one({'booking_id': data["booking_id"]})
+            if result.deleted_count > 0:
+                return f"Booking with ID {data["booking_id"]} has been canceled successfully."
+            else:
+                return f"Booking with ID {data["booking_id"]} not found."
+
+
+    def update_booking(self, short_booking_id, new_start_time, new_end_time):
+        with self.lock:
+            booking = self.db.bookings.find_one({'booking_id': short_booking_id})
+            if not booking:
+                return f"Booking with ID {short_booking_id} not found."
+
+            hall_id = booking['hall_id']
+            # Check if the new time slot is available
+            if hall_id in self.fetch_available_halls(new_start_time, new_end_time):
+                result = self.db.bookings.update_one(
+                    {'booking_id': short_booking_id},
+                    {'$set': {'start_time': new_start_time, 'end_time': new_end_time}}
+                )
+                if result.modified_count > 0:
+                    return f"Booking with ID {short_booking_id} has been updated successfully."
+                else:
+                    return f"Failed to update booking with ID {short_booking_id}."
+            else:
+                return "The new time slot is not available for the selected hall."

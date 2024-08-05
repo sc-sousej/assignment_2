@@ -12,7 +12,7 @@ from services.booking_service import BookingService
 
 def test_fetch_all_booked_halls():
     service = BookingService()
-    all_booked_halls = service.fetch_all_booked_halls("2024-07-10", "2024-07-12")
+    all_booked_halls = service.fetch_all_booked_halls("2024-07-10", "2024-09-12")
     # assert "A" in available_halls  # Example assertion
     print("hello")
     
@@ -31,11 +31,22 @@ def test_book_multiple_halls():
 ]
 )
 
+def test_delete_booking():
+    service = BookingService()
+    result = service.cancel_booking({"booking_id": "27cee5"})
+    print(result)
+
+def test_update_booking():
+    service = BookingService()
+    result = service.update_booking("27cee4","2024-08-03T14:00:00","2024-08-04T16:00:00")
+    print(result)
 
 
 
 if __name__ == '__main__':
+    test_update_booking()
+    # test_delete_booking()
     # test_fetch_all_booked_halls()
-    test_book_multiple_halls()
+    # test_book_multiple_halls()
     # test_book_hall()
     # pytest.main()

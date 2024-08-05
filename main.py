@@ -46,6 +46,24 @@ def main():
             results = service.book_multiple_halls(bookings)
             for result in results:
                 print(f"Hall ID {result['hall_id']}: {result['result']}")
+        
+        elif user_input == 'cancel':
+            print('Enter the booking id as JSON string eg- {"booking_id": "abcdef"}: ')
+            data = json.loads(data)
+            result = service.cancel_booking(data['booking_id'])
+            print(result)
+
+        elif user_input == 'update':
+            print('Enter the booking id as JSON string eg- {"booking_id": "abcdef"}: ')
+            print('''eg-{
+            "booking_id": "abcdef",
+            "new_start_time": "2024-08-01T14:00:00",
+            "new_end_time": "2024-08-01T16:00:00"
+            }''')
+            print("enter data as JSON string: ")
+            data = json.loads(data)
+            result = service.update_booking(data['booking_id'], data['new_start_time'], data['new_end_time'])
+            print(result)
 
         # Implement other commands similarly
         # {"start_time":"2024-07-30T10:00:00","end_time":"2024-07-30T12:00:00"}
