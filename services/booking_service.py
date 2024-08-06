@@ -1,12 +1,17 @@
 from database.db_connection import MongoDBConnection
+from utils.lock_manager import LockManager
 from models.booking import Booking
+from collections import defaultdict
+from threading import Lock
 from datetime import datetime
 import threading
 
 class BookingService:
     def __init__(self):
         self.db = MongoDBConnection().database
-        self.lock = threading.Lock()
+        # self.lock = threading.Lock()
+        self.locks = defaultdict(Lock)
+        self.all_halls = ['A', 'B', 'C', 'D', 'E', 'F']
 
     def fetch_available_halls(self, start_time, end_time):
         bookings = self.db.bookings.find({
@@ -16,12 +21,14 @@ class BookingService:
             ]
         })
         booked_halls = [booking['hall_id'] for booking in bookings]
-        all_halls = ['A', 'B', 'C', 'D', 'E', 'F']
-        available_halls = [hall for hall in all_halls if hall not in booked_halls]
+        # all_halls = 
+        available_halls = [hall for hall in self.all_halls if hall not in booked_halls]
         return available_halls
 
     def book_hall(self, hall_id, start_time, end_time):
-        with self.lock:
+        # with self.lock:
+        lock = self.locks[hall_id]
+        with lock:
             if hall_id in self.fetch_available_halls(start_time, end_time):
                 booking = Booking(hall_id, start_time, end_time)
                 result = self.db.bookings.insert_one(booking.__dict__)
@@ -41,20 +48,7 @@ class BookingService:
             results.append({ "hall_id": hall_id, "result": result })
         return results
     
-    # to be deleted
-    # def fetch_alll_booked_halls(self,start_time, end_time):
-    #     bookings = self.db.bookings.find({
-    #         "$and": [
-    #             {"start_time": {"$lte": end_time}},
-    #             {"end_time": {"$gte": start_time}}
-    #         ]
-    #     })
-    #     print("hello")
-    #     for hall in bookings:
-    #         print(hall)
-    #     return bookings
 
-    
     
     def fetch_all_booked_halls(self, start_date, end_date):
 
@@ -110,6 +104,7 @@ class BookingService:
                 return f"Booking with ID {short_booking_id} not found."
 
             hall_id = booking['hall_id']
+
             # Check if the new time slot is available
             if hall_id in self.fetch_available_halls(new_start_time, new_end_time):
                 result = self.db.bookings.update_one(
