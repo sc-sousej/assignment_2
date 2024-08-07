@@ -35,8 +35,10 @@ class LockManager:
                     # No conflicts, acquire lock
                     self.locks[hall_id][(start_time, end_time)] = Lock()
                     self.locks[hall_id][(start_time, end_time)].acquire()
+                    print("LM: lock acquired")
                     return True
                 else:
+                    print("waiting for lock to become available")
                     # Wait for the lock to become available
                     self.conditions[hall_id][(start_time, end_time)].wait()
 
@@ -46,8 +48,14 @@ class LockManager:
 
         if hall_id in self.locks and (start_time, end_time) in self.locks[hall_id]:
             self.locks[hall_id][(start_time, end_time)].release()
+            print("LM: lock released")
             del self.locks[hall_id][(start_time, end_time)]
+            print("LM: lock deleted")
 
             # Notify waiting threads that the lock is released
             with self.conditions[hall_id][(start_time, end_time)]:
                 self.conditions[hall_id][(start_time, end_time)].notify_all()
+
+
+
+

@@ -1,4 +1,5 @@
 import json
+from datetime import datetime
 from services.booking_service import BookingService
 
 def main():
@@ -21,10 +22,22 @@ def main():
         elif user_input == 'book':
             print("enter hall_id, start time and end time")
             print('eg- {"hall_id":"B","start_time":"2024-07-30T10:00:00","end_time":"2024-07-30T12:00:00"}')
-            data = input("Enter data as JSON string: ").strip()
-            data = json.loads(data)
-            result = service.book_hall(data['hall_id'], data['start_time'], data['end_time'])
-            print(result)
+            while True:
+                data = input("Enter data as JSON string: ").strip()
+                try:
+                    data = json.loads(data)
+                    start_time = datetime.fromisoformat(data['start_time'])
+                    end_time = datetime.fromisoformat(data['end_time'])
+
+                    if end_time <= start_time:
+                        print("Error: End time must be after start time. Please try again.")
+                        continue
+
+                    result = service.book_hall(data['hall_id'], data['start_time'], data['end_time'])
+                    print(result)
+                    break
+                except:
+                    print("enter data in correct form")
 
         elif user_input == 'view':
             print("enter start date and end date")
@@ -68,7 +81,7 @@ def main():
         # Implement other commands similarly
         # {"start_time":"2024-07-30T10:00:00","end_time":"2024-07-30T12:00:00"}
         # book
-        # {"hall_id":"B","start_time":"2024-07-30T10:00:00","end_time":"2024-07-30T12:00:00"}   
+        # {"hall_id":"B","start_time":"2024-07-10T10:00:00","end_time":"2024-07-03T12:00:00"}   
         # view all
         # {"start_date": "2024-08-01", "end_date": "2024-08-02"}
 
