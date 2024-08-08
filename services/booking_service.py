@@ -5,9 +5,24 @@ from collections import defaultdict
 from threading import Lock
 from datetime import datetime
 import threading
+import time
 
 class BookingService:
-    def __init__(self):
+    
+    _instance = None
+    _lock = Lock()
+
+    
+
+    def __new__(cls, *args, **kwargs):
+        with cls._lock:
+            if cls._instance is None:
+                cls._instance = super().__new__(cls)
+                cls._instance._initialize()
+        return cls._instance
+    
+    def _initialize(self):
+        self.lock_service = LockManager()
         self.db = MongoDBConnection().database
         # self.lock = threading.Lock()
         self.locks = defaultdict(Lock)
@@ -25,15 +40,20 @@ class BookingService:
         available_halls = [hall for hall in self.all_halls if hall not in booked_halls]
         return available_halls
 
-    def book_hall(self, hall_id, start_time, end_time):
+    def book_hall(self, hall_id, start_time, end_time,thread):
         # with self.lock:
         # LockManager.acquire_lock()
-        lock_service = LockManager()
-        if lock_service.acquire_lock(hall_id, start_time, end_time):
+        # lock_service = LockManager()
+        res = self.lock_service.acquire_lock(hall_id, start_time, end_time)
+        print(res)
+        # if self.lock_service.acquire_lock(hall_id, start_time, end_time):
+        if res:
+            # print(thread," got lock")
             try:
                 if hall_id in self.fetch_available_halls(start_time, end_time):
-                    # print("hall available")
+                    print("hall available")
                     booking = Booking(hall_id, start_time, end_time)
+                    time.sleep(7)
                     result = self.db.bookings.insert_one(booking.__dict__)
                     booking.set_booking_id(result.inserted_id)
                     self.db.bookings.update_one({'_id': result.inserted_id}, {'$set': {'booking_id': booking.booking_id}})
@@ -41,7 +61,7 @@ class BookingService:
                 else:
                     return "Hall is already booked for the given time slot"
             finally:
-                lock_service.release_lock(hall_id, start_time, end_time)
+                self.lock_service.release_lock(hall_id, start_time, end_time)
         else:
             return "Could not acquire lock for the given time slot"
             
