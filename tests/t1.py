@@ -1,6 +1,11 @@
 import pytest
 from dotenv import load_dotenv
 import os
+from utils.lock_manager import LockManager
+from utils.lock_manager import Singleton
+# from tests.zaid_lock import CustomLock
+
+
 
 load_dotenv()
 from services.booking_service import BookingService
@@ -47,11 +52,17 @@ def test_update_booking():
 
 
 
-if __name__ == '__main__':
+# if __name__ == '__main__':
     # test_update_booking()
     # test_delete_booking()
     # test_fetch_available_halls()
     # test_fetch_all_booked_halls()
     # test_book_multiple_halls()
-    test_book_hall()
+# test_book_hall()
     # pytest.main()
+
+# lock_service = LockManager()
+# lock_service = CustomLock()
+
+# print(lock_service)
+

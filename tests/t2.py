@@ -3,6 +3,12 @@ from dotenv import load_dotenv
 import os
 import time
 import threading
+from utils.lock_manager import LockManager
+from utils.lock_manager import Singleton
+# from tests.zaid_lock import CustomLock
+
+
+
     
 load_dotenv()
 from services.booking_service import BookingService
@@ -22,7 +28,7 @@ def test_fetch_all_booked_halls():
 
 def test_book_hall():
     service = BookingService()
-    # print("new ob")
+    print(service)
     time.sleep(3)
     result = service.book_hall("F", "2024-09-20T10:00:00", "2024-09-20T12:00:00","t-2")
     print(result)
@@ -51,29 +57,35 @@ def test_update_booking():
 
 
 
-if __name__ == '__main__':
+# if __name__ == '__main__':
     # test_update_booking()
     # test_delete_booking()
     # test_fetch_available_halls()
     # test_fetch_all_booked_halls()
     # test_book_multiple_halls()
     # test_book_hall()
-    # test_book_hall()
+
+# lock_service = LockManager()
+
+# lock_service = Singleton.instance()
+# print(lock_service)
+
+# test_book_hall()
 
     # pytest.main()
-    num_threads = 2
+num_threads = 10
 
-    # List to hold references to thread objects
-    threads = []
+# List to hold references to thread objects
+threads = []
 
-    # Create and start threads
-    for i in range(num_threads):
-        thread = threading.Thread(target=test_book_hall, name=f"Thread-{i+1}")
-        threads.append(thread)
-        thread.start()
+# Create and start threads
+for i in range(num_threads):
+    thread = threading.Thread(target=test_book_hall, name=f"Thread-{i+1}")
+    threads.append(thread)
+    thread.start()
 
-    # Wait for all threads to complete
-    for thread in threads:
-        thread.join()
+# Wait for all threads to complete
+for thread in threads:
+    thread.join()
 
-    print("All threads have finished execution.")
+print("All threads have finished execution.")

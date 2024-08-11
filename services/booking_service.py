@@ -18,11 +18,14 @@ class BookingService:
         with cls._lock:
             if cls._instance is None:
                 cls._instance = super().__new__(cls)
+                print("initializing")
                 cls._instance._initialize()
         return cls._instance
     
     def _initialize(self):
+        print("init done!")
         self.lock_service = LockManager()
+        print(self.lock_service)
         self.db = MongoDBConnection().database
         # self.lock = threading.Lock()
         self.locks = defaultdict(Lock)
@@ -40,7 +43,7 @@ class BookingService:
         available_halls = [hall for hall in self.all_halls if hall not in booked_halls]
         return available_halls
 
-    def book_hall(self, hall_id, start_time, end_time,thread):
+    def book_hall(self, hall_id, start_time, end_time):
         # with self.lock:
         # LockManager.acquire_lock()
         # lock_service = LockManager()
@@ -51,13 +54,13 @@ class BookingService:
             # print(thread," got lock")
             try:
                 if hall_id in self.fetch_available_halls(start_time, end_time):
-                    print("hall available")
+                    print("hall available ")
                     booking = Booking(hall_id, start_time, end_time)
-                    time.sleep(7)
+                    # time.sleep(7)
                     result = self.db.bookings.insert_one(booking.__dict__)
                     booking.set_booking_id(result.inserted_id)
                     self.db.bookings.update_one({'_id': result.inserted_id}, {'$set': {'booking_id': booking.booking_id}})
-                    return f"Booking successful. Booking ID: {booking.booking_id}"
+                    return f"Booking successful for hall {hall_id}. Booking ID: {booking.booking_id}"
                 else:
                     return "Hall is already booked for the given time slot"
             finally:
@@ -80,23 +83,15 @@ class BookingService:
     def fetch_all_booked_halls(self, start_date, end_date):
 
         try:
-            # print("w0")
-            # start_date_obj = datetime.strptime(start_date, '%Y-%m-%dT%H:%M:%S')
             start_date_obj = start_date+"T00:00:00"
             end_date_obj = end_date+"T23:59:59"
-            # print("w1")
-            # end_date_obj = datetime.strptime(end_date, '%Y-%m-%dT%H:%M:%S')
             bookings = self.db.bookings.find({
                 "$and": [
                 {"start_time": {"$lte": end_date_obj}},
                 {"end_time": {"$gte": start_date_obj}}
                 ]
-                # "$or": [
-                #     {"start_time": {"$lte": start_date_obj}, "end_time": {"$gte": start_date_obj}},
-                #     {"start_time": {"$lte": end_date_obj}, "end_time": {"$gte": end_date_obj}}
-                # ]
+                
             })
-            # print(len(bookings))
             booked_records = []
             for booking in bookings:
                 booked_records.append({
@@ -114,14 +109,6 @@ class BookingService:
         except Exception as e:
             print(f"An error occurred: {e}")
             return []
-
-    # def cancel_booking(self, data):
-    #     with self.lock:
-    #         result = self.db.bookings.delete_one({'booking_id': data["booking_id"]})
-    #         if result.deleted_count > 0:
-    #             return f"Booking with ID {data["booking_id"]} has been canceled successfully."
-    #         else:
-    #             return f"Booking with ID {data["booking_id"]} not found."
 
 
     def cancel_booking(self, short_booking_id):

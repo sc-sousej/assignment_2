@@ -1,6 +1,26 @@
 from threading import Lock, Condition
 from collections import defaultdict, deque
 from datetime import datetime
+import sys
+
+
+class Singleton(object):
+    _instance = None
+
+    def __init__(self):
+        raise RuntimeError('Call instance() instead')
+
+    @classmethod
+    def instance(cls):
+        if cls._instance is None:
+            print('Creating new instance')
+            cls._instance = cls.__new__(cls)
+            # Put any initialization here.
+        return cls._instance
+
+
+
+# sys.modules["main"] = sys.modules["__main__"]
 
 class LockManager:
 
@@ -12,6 +32,7 @@ class LockManager:
     def __new__(cls, *args, **kwargs):
         with cls._lock:
             if cls._instance is None:
+                print("NONE INST")
                 cls._instance = super().__new__(cls)
                 cls._instance._initialize()
         return cls._instance
@@ -39,9 +60,9 @@ class LockManager:
                 while True:
                     # Check for any time conflicts
                     conflict = False
-                    print("hall-id-",self.locks[hall_id])
+                    # print("hall-id-",self.locks[hall_id])
                     for (existing_start, existing_end) in self.locks[hall_id]:
-                        print("loop")
+                        # print("loopsdc ")
                         print("is conflict? ",self._is_time_conflict(existing_start, existing_end, start_time, end_time))
                         if self._is_time_conflict(existing_start, existing_end, start_time, end_time):
                             conflict = True
