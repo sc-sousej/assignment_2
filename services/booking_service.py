@@ -68,15 +68,17 @@ class BookingService:
         else:
             return "Could not acquire lock for the given time slot"
             
-    def book_multiple_halls(self, bookings):
-        results = []
-        for booking in bookings:
-            hall_id = booking['hall_id']
-            start_time = booking['start_time']
-            end_time = booking['end_time']
-            result = self.book_hall(hall_id, start_time, end_time)
-            results.append({ "hall_id": hall_id, "result": result })
-        return results
+    # DONT DELETE AS OF NOW!
+    
+    # def book_multiple_halls(self, bookings):
+    #     results = []
+    #     for booking in bookings:
+    #         hall_id = booking['hall_id']
+    #         start_time = booking['start_time']
+    #         end_time = booking['end_time']
+    #         result = self.book_hall(hall_id, start_time, end_time)
+    #         results.append({ "hall_id": hall_id, "result": result })
+    #     return results
     
 
     

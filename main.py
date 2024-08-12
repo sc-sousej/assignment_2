@@ -31,14 +31,9 @@ class BookingSystemCLI:
             print("enter data in correct form")
 
     def book_hall_helper(self,data):
-        # try:
-            
         if self.verify_time_range(data['start_time'], data['end_time']):
-            # print("data verified---")
             result = self.service.book_hall(data['hall_id'], data['start_time'], data['end_time'])
             print(result)
-        # except Exception as error:
-        #     print("enter data in correct form, ",error)
         
 
     def book_hall(self):
