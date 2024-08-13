@@ -1,0 +1,18 @@
+update
+    {
+        "booking_id": "1ea678",
+        "new_start_time": "2024-08-01T14:00:00",
+        "new_end_time": "2024-10-01T16:00:00"
+        }
+
+
+    {"start_time":"2024-08-01T10:00:00","end_time":"2024-08-01T12:00:00"}
+
+    book
+    {"hall_id":"A","start_time":"2024-07-01T10:00:00","end_time":"2024-07-03T12:00:00"}  
+
+    view all
+    {"start_date": "2024-08-01", "end_date": "2024-08-01"}
+
+    cancel
+    {"booking_id": "1ea677"}

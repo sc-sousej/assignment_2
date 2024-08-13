@@ -44,7 +44,7 @@ class LockManager:
     def _is_time_conflict(self, existing_start, existing_end, new_start, new_end):
         return not (new_end <= existing_start or new_start >= existing_end)
 
-    def acquire_lock(self, hall_id, start_time, end_time):
+    def acquire_lock(self, hall_id, start_time, end_time, timeout=10):
         # with self._lock:
             start_time = datetime.fromisoformat(start_time)
             end_time = datetime.fromisoformat(end_time)
@@ -62,8 +62,7 @@ class LockManager:
                     conflict = False
                     # print("hall-id-",self.locks[hall_id])
                     for (existing_start, existing_end) in self.locks[hall_id]:
-                        # print("loopsdc ")
-                        print("is conflict? ",self._is_time_conflict(existing_start, existing_end, start_time, end_time))
+                        # print("is conflict? ",self._is_time_conflict(existing_start, existing_end, start_time, end_time))
                         if self._is_time_conflict(existing_start, existing_end, start_time, end_time):
                             conflict = True
                             break
@@ -77,7 +76,8 @@ class LockManager:
                     else:
                         print("waiting for lock to become available")
                         # Wait for the lock to become available
-                        self.conditions[hall_id][(start_time, end_time)].wait()
+                        self.conditions[hall_id][(start_time, end_time)].wait(timeout=timeout)
+                        print("lock wait timeout")
 
     def release_lock(self, hall_id, start_time, end_time):
         # with self._lock:
@@ -88,7 +88,7 @@ class LockManager:
                 self.locks[hall_id][(start_time, end_time)].release()
                 print("LM: lock released")
                 del self.locks[hall_id][(start_time, end_time)]
-                print("LM: lock deleted")
+                # print("LM: lock deleted")
 
                 # Notify waiting threads that the lock is released
                 with self.conditions[hall_id][(start_time, end_time)]:

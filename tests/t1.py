@@ -3,7 +3,6 @@ from dotenv import load_dotenv
 import os
 from utils.lock_manager import LockManager
 from utils.lock_manager import Singleton
-# from tests.zaid_lock import CustomLock
 
 
 
@@ -45,15 +44,16 @@ def test_delete_booking():
     print(result)
 
 def test_update_booking():
+    print("updaing")
     service = BookingService()
     # service.update_booking()
-    result = service.update_booking("9c86b0","2024-08-03T14:00:00","2025-08-04T16:00:00")
+    result = service.update_booking("62e3d2","2024-08-03T14:00:00","2025-08-04T16:00:00")
     print(result)
 
 
 
 # if __name__ == '__main__':
-    # test_update_booking()
+test_update_booking()
     # test_delete_booking()
     # test_fetch_available_halls()
     # test_fetch_all_booked_halls()

@@ -24,17 +24,12 @@ class BookingSystemCLI:
         data = input("Enter JSON string: ").strip()
         try:
             data = json.loads(data)
-            if self.verify_time_range(data['start_time'], data['end_time']):
-                available_halls = self.service.fetch_available_halls(data['start_time'], data['end_time'])
-                print("Available halls:", available_halls)
+            # if self.verify_time_range(data['start_time'], data['end_time']):
+            available_halls = self.service.fetch_available_halls(data['start_time'], data['end_time'])
+            print("Available halls:", available_halls)
         except:
             print("enter data in correct form")
 
-    def book_hall_helper(self,data):
-        if self.verify_time_range(data['start_time'], data['end_time']):
-            result = self.service.book_hall(data['hall_id'], data['start_time'], data['end_time'])
-            print(result)
-        
 
     def book_hall(self):
         print("enter hall_id, start time and end time")
@@ -42,7 +37,9 @@ class BookingSystemCLI:
         data = input("Enter data as JSON string: ").strip()
         try:
             data = json.loads(data)
-            self.book_hall_helper(data)
+            # self.book_hall_helper(data)
+            result = self.service.book_hall(data['hall_id'], data['start_time'], data['end_time'])
+            print(result)
         except:
             print("enter data in correct form")
         
@@ -55,24 +52,26 @@ class BookingSystemCLI:
         data = input("Enter data as JSON string: ").strip()
         try:
             data = json.loads(data)
-            if self.verify_time_range(data['start_date'], data['end_date']):
-                result = self.service.fetch_all_booked_halls(data['start_date'], data['end_date'])
-                print(result)
+            result = self.service.fetch_all_booked_halls(data['start_date'], data['end_date'])
+            print(result)
+                           
         except:
             print("enter data in correct form")
 
     def book_multiple_halls(self):
 
         print("enter hall_id, start time and end time for each booking")
-        print('''eg- [
+        print('''eg- {"bookings":[
         {"hall_id": "A", "start_time": "2024-08-01T10:00:00", "end_time": "2024-08-01T12:00:00"},
         {"hall_id": "C", "start_time": "2024-08-01T16:00:00", "end_time": "2024-08-01T18:00:00"}
-        ]''')
+        ]}''')
         data = input("Enter data as JSON string: ")
         try:
             data = json.loads(data)
-            for booking_data in data:
-                self.book_hall_helper(booking_data)
+            for booking_data in data['bookings']:
+                # self.book_hall_helper(booking_data)
+                result = self.service.book_hall(booking_data['hall_id'], booking_data['start_time'], booking_data['end_time'])
+                # print(result)
         except:
             print("enter data in correct form")
 
@@ -98,9 +97,9 @@ class BookingSystemCLI:
 
         try:
             data = json.loads(data)
-            if self.verify_time_range(data['new_start_time'], data['new_end_time']):
-                result = self.service.update_booking(data['booking_id'], data['new_start_time'], data['new_end_time'])
-                print(result)
+            # if self.verify_time_range(data['new_start_time'], data['new_end_time']):
+            result = self.service.update_booking(data['booking_id'], data['new_start_time'], data['new_end_time'])
+            print(result)
         except:
             print("enter data in correct form")
 
@@ -128,13 +127,7 @@ class BookingSystemCLI:
             elif user_input == 'update':
                 self.update_booking()
 
-
-
-    # {"start_time":"2024-07-30T10:00:00","end_time":"2024-07-30T12:00:00"}
-    # book
-    # {"hall_id":"A","start_time":"2024-07-01T10:00:00","end_time":"2024-07-03T12:00:00"}   
-    # view all
-    # {"start_date": "2024-08-01", "end_date": "2024-08-02"}
+    
 
 if __name__ == '__main__':
     cli = BookingSystemCLI()

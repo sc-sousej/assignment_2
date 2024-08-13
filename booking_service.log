@@ -1,0 +1,6 @@
+2024-08-13 16:10:30,685 - INFO - Received update request: Booking ID: 62e3d2, Start: 2024-08-01T10:00:00, End: 2024-08-30T11:00:00
+2024-08-13 16:10:30,687 - INFO - Update sucess, Booking ID: 62e3d2, Start: 2024-08-01T10:00:00, End: 2024-08-30T11:00:00
+2024-08-13 16:12:45,942 - INFO - Received fetch available hall request: Start: 2024-08-01T10:00:00, End: 2024-08-30T11:00:00
+2024-08-13 16:13:49,076 - INFO - Received fetch bookings request: Start: 2024-08-01, End: 2024-08-30
+2024-08-13 16:33:09,070 - INFO - Received fetch bookings request: Start: 2024-08-01, End: 2024-08-30
+2024-08-13 16:33:09,072 - INFO - Fetch bookings success: Start: 2024-08-01, End: 2024-08-30
