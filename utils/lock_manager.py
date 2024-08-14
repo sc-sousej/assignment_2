@@ -1,6 +1,8 @@
 from threading import Lock, Condition
 from collections import defaultdict, deque
 from datetime import datetime
+from utils.logger import setup_logger
+
 import sys
 
 
@@ -13,7 +15,7 @@ class Singleton(object):
     @classmethod
     def instance(cls):
         if cls._instance is None:
-            print('Creating new instance')
+            # print('Creating new instance')
             cls._instance = cls.__new__(cls)
             # Put any initialization here.
         return cls._instance
@@ -32,7 +34,7 @@ class LockManager:
     def __new__(cls, *args, **kwargs):
         with cls._lock:
             if cls._instance is None:
-                print("NONE INST")
+                # print("NONE INST")
                 cls._instance = super().__new__(cls)
                 cls._instance._initialize()
         return cls._instance
@@ -40,12 +42,15 @@ class LockManager:
     def _initialize(self):
         self.locks = defaultdict(dict)
         self.conditions = defaultdict(dict)
+        self.logger = setup_logger("lock_manager.log")
+
 
     def _is_time_conflict(self, existing_start, existing_end, new_start, new_end):
         return not (new_end <= existing_start or new_start >= existing_end)
 
     def acquire_lock(self, hall_id, start_time, end_time, timeout=10):
         # with self._lock:
+            self.logger.info(f'Lock request received, Hall id: {hall_id}, start: {start_time}, end: {end_time}')
             start_time = datetime.fromisoformat(start_time)
             end_time = datetime.fromisoformat(end_time)
             if hall_id not in self.locks:
@@ -71,13 +76,19 @@ class LockManager:
                         # No conflicts, acquire lock
                         self.locks[hall_id][(start_time, end_time)] = Lock()
                         res = self.locks[hall_id][(start_time, end_time)].acquire()
-                        print("LM: lock acquired ")
+                        self.logger.info(f'Lock Aquired, Hall id: {hall_id}, start: {start_time}, end: {end_time}')
+
+                        # print("LM: lock acquired ")
                         return True
                     else:
-                        print("waiting for lock to become available")
+                        # print("waiting for lock to become available")
                         # Wait for the lock to become available
+                        self.logger.info(f'Waiting for lock, Hall id: {hall_id}, start: {start_time}, end: {end_time}')
+
                         self.conditions[hall_id][(start_time, end_time)].wait(timeout=timeout)
-                        print("lock wait timeout")
+                        self.logger.error(f'Lock wait timeout, Hall id: {hall_id}, start: {start_time}, end: {end_time}')
+
+                        # print("lock wait timeout")
 
     def release_lock(self, hall_id, start_time, end_time):
         # with self._lock:
@@ -86,7 +97,9 @@ class LockManager:
 
             if hall_id in self.locks and (start_time, end_time) in self.locks[hall_id]:
                 self.locks[hall_id][(start_time, end_time)].release()
-                print("LM: lock released")
+                self.logger.info(f'Lock Released, Hall id: {hall_id}, start: {start_time}, end: {end_time}')
+
+                # print("LM: lock released")
                 del self.locks[hall_id][(start_time, end_time)]
                 # print("LM: lock deleted")
 

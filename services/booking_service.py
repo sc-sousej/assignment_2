@@ -22,6 +22,8 @@ class BookingService:
         self.lock_service = LockManager()
         self.db = MongoDBConnection().database
         self.logger = setup_logger("booking_service.log")
+        if self.db is None:
+            self.logger.error("Connection with DB Failed!")
         self.all_halls = ['A', 'B', 'C', 'D', 'E', 'F']
 
     def verify_time_range(self,start, end):  
@@ -39,6 +41,10 @@ class BookingService:
         # finally:
         #     return False
         
+    def delete_all_bookings(self):
+        result = self.db.bookings.delete_many({})
+        return f"Deleted {result.deleted_count} bookings from the database."
+    
 
     def fetch_available_halls(self, start_time, end_time, booking_id = None):
         try:
@@ -134,7 +140,7 @@ class BookingService:
             try:
                 result = self.db.bookings.delete_one({'booking_id': short_booking_id})
                 if result.deleted_count > 0:
-                    return f"Booking with ID {short_booking_id} has been canceled successfully."
+                    return f"Booking with ID {short_booking_id} has been cancelled successfully."
                 else:
                     return f"Booking with ID {short_booking_id} not found."
             finally:
@@ -145,7 +151,6 @@ class BookingService:
 
 
     def update_booking(self, short_booking_id, new_start_time, new_end_time):
-        print("updated called")
         self.logger.info(f'Received update request: Booking ID: {short_booking_id}, Start: {new_start_time}, End: {new_end_time}')
 
         if not self.verify_time_range(new_start_time,new_end_time):
@@ -195,7 +200,7 @@ class BookingService:
                         {'$set': {'start_time': new_start_time, 'end_time': new_end_time}}
                     )
                     if result.modified_count > 0:
-                        self.logger.info(f'Update sucess, Booking ID: {booking_id}, Start: {new_start_time}, End: {new_end_time}')
+                        self.logger.info(f'Update success, Booking ID: {booking_id}, Start: {new_start_time}, End: {new_end_time}')
                         return f"Booking with ID {short_booking_id} has been updated successfully."
                     else:
                         return f"Failed to update booking with ID {short_booking_id}."
