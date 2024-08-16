@@ -1,4 +1,4 @@
-from database.db_connection import MongoDBConnection
+from database.db_module import BookingDatabase
 from utils.lock_manager import LockManager
 from models.booking import Booking
 from collections import defaultdict
@@ -20,7 +20,7 @@ class BookingController:
     
     def _initialize(self):
         self.lock_service = LockManager()
-        self.db = MongoDBConnection().database
+        self.db = BookingDatabase()
         self.logger = setup_logger("booking_service.log")
         if self.db is None:
             self.logger.error("Connection with DB Failed!")
@@ -40,7 +40,7 @@ class BookingController:
         
         
     def delete_all_bookings(self):
-        result = self.db.bookings.delete_many({})
+        result = self.db.delete_database()
         return f"Deleted {result.deleted_count} bookings from the database."
     
 
@@ -52,12 +52,7 @@ class BookingController:
         except:
             self.logger.info(f"Fetch available hall failed!: Start: {start_time}, End: {end_time}")
             raise
-        bookings = self.db.bookings.find({
-            "$or": [
-                {"start_time": {"$lte": end_time, "$gte": start_time}},
-                {"end_time": {"$lte": end_time, "$gte": start_time}}
-            ]
-        })
+        bookings = self.db.fetch_available(start_time,end_time)
 
         booked_halls = [booking['hall_id'] for booking in bookings]
         available_halls = [hall for hall in self.all_halls if hall not in booked_halls]
@@ -73,17 +68,21 @@ class BookingController:
             try:
                 if hall_id in self.fetch_available_halls(start_time, end_time):
                     booking = Booking(hall_id, start_time, end_time)
-                    result = self.db.bookings.insert_one(booking.__dict__)
-                    booking.set_booking_id(result.inserted_id)
-                    self.db.bookings.update_one({'_id': result.inserted_id}, {'$set': {'booking_id': booking.booking_id}})
-                    self.logger.info(f"Booking successful for hall {hall_id}. Booking ID: {booking.booking_id}")
-                    return f"Booking successful for hall {hall_id}. Booking ID: {booking.booking_id}"
+                    booking_id = self.db.insert_hall_booking(booking.__dict__)
+                    # print("updation result= ",result)
+                    # booking.set_booking_id(result.inserted_id)
+                    # self.db.bookings.update_one({'_id': result.inserted_id}, {'$set': {'booking_id': booking.booking_id}})
+                    self.logger.info(f"Booking successful for hall {hall_id}. Booking ID: {booking_id}")
+                    return f"Booking successful for hall {hall_id}. Booking ID: {booking_id}"
                 else:
                     return "Hall is already booked for the given time slot"
+            except Exception as e:
+                self.logger.error(f"Book hall failed! Hall {hall_id}, Start: {start_time}, End: {end_time}, Error: {e}")
+
             finally:
                 self.lock_service.release_lock(hall_id, start_time, end_time)
         else:
-            self.logger.error(f"Book: Lock aquire failed!: Hall {hall_id}, Start: {start_time}, End: {end_time}")
+            self.logger.error(f"Book: Lock aquire failed! Hall {hall_id}, Start: {start_time}, End: {end_time}")
             return "Could not acquire lock for the given time slot"
             
     
@@ -97,15 +96,8 @@ class BookingController:
             return "Error: End time must be after start time. Please try again."
 
         try:
-            start_date_obj = start_date+"T00:00:00"
-            end_date_obj = end_date+"T23:59:59"
-            bookings = self.db.bookings.find({
-                "$and": [
-                {"start_time": {"$lte": end_date_obj}},
-                {"end_time": {"$gte": start_date_obj}}
-                ]
-                
-            })
+            bookings = self.db.fetch_bookings(start_date,end_date)
+            print("bkings===",bookings)
             booked_records = []
             for booking in bookings:
                 booked_records.append({
@@ -123,10 +115,9 @@ class BookingController:
 
 
     def cancel_booking(self, short_booking_id):
-        # lock_service = LockManager()
         self.logger.info(f"Received cancellation request: Booking ID: {short_booking_id}")
 
-        booking = self.db.bookings.find_one({'booking_id': short_booking_id})
+        booking = self.db.find_booking(short_booking_id)
         if not booking:
             return f"Booking with ID {short_booking_id} not found."
 
@@ -136,7 +127,7 @@ class BookingController:
 
         if self.lock_service.acquire_lock(hall_id, start_time, end_time):
             try:
-                result = self.db.bookings.delete_one({'booking_id': short_booking_id})
+                result = self.db.delete_booking(short_booking_id)
                 if result.deleted_count > 0:
                     return f"Booking with ID {short_booking_id} has been cancelled successfully."
                 else:
@@ -182,21 +173,10 @@ class BookingController:
 
         if lock_aquired:
             try:
-                # Checking if the new time slot is available
-                query = {
-                    "hall_id": hall_id,
-                    "booking_id": {"$ne": booking_id},  # Excluding the provided booking_id
-                    "$or": [
-                        {"start_time": {"$lt": new_end_time}, "end_time": {"$gt": new_start_time}}
-                    ]
-                }
-                conflicting_booking = self.db.bookings.find_one(query)
+                conflicting_booking = self.db.find_conflicting_bookings(hall_id,booking_id, new_start_time,new_end_time)
 
                 if conflicting_booking is None:
-                    result = self.db.bookings.update_one(
-                        {'booking_id': short_booking_id},
-                        {'$set': {'start_time': new_start_time, 'end_time': new_end_time}}
-                    )
+                    result = self.db.update_booking(booking_id,new_start_time,new_end_time)
                     if result.modified_count > 0:
                         self.logger.info(f'Update success, Booking ID: {booking_id}, Start: {new_start_time}, End: {new_end_time}')
                         return f"Booking with ID {short_booking_id} has been updated successfully."

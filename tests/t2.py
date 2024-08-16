@@ -4,7 +4,8 @@ import os
 import time
 import threading
 from utils.lock_manager import LockManager
-from utils.lock_manager import Singleton
+from datetime import datetime
+# from utils.lock_manager import Singleton
 # from tests.zaid_lock import CustomLock
 
 
@@ -22,16 +23,17 @@ def test_fetch_available_halls():
 
 def test_fetch_all_booked_halls():
     controller = BookingController()
-    all_booked_halls = controller.fetch_all_booked_halls("2023-07-10", "2025-09-12")
+    all_booked_halls = controller.fetch_bookings("2024-08-01", "2024-08-30")
     # assert "A" in available_halls  # Example assertion
-    print("hello")
+    print("hello",all_booked_halls)
     
 
 def test_book_hall():
     controller = BookingController()
     print(controller)
     time.sleep(3)
-    result = controller.book_hall("F", "2024-09-20T10:00:00", "2024-09-20T12:00:00","t-2")
+    result = controller.book_hall("D", "2024-09-20T10:00:00", "2024-09-20T12:00:00")
+    # controller.book_hall()
     print(result)
     # assert result == "Booking successful"
 
@@ -59,12 +61,13 @@ def test_update_booking():
 
 
 # if __name__ == '__main__':
-    # test_update_booking()
-    # test_delete_booking()
-    # test_fetch_available_halls()
-    # test_fetch_all_booked_halls()
-    # test_book_multiple_halls()
-    # test_book_hall()
+
+# test_update_booking()
+# test_delete_booking()
+# test_fetch_available_halls()
+test_fetch_all_booked_halls()
+# test_book_multiple_halls()
+# test_book_hall()
 
 # lock_controller = LockManager()
 
@@ -74,19 +77,21 @@ def test_update_booking():
 # test_book_hall()
 
     # pytest.main()
-num_threads = 10
+# num_threads = 10
 
-# List to hold references to thread objects
-threads = []
+# # List to hold references to thread objects
+# threads = []
 
-# Create and start threads
-for i in range(num_threads):
-    thread = threading.Thread(target=test_book_hall, name=f"Thread-{i+1}")
-    threads.append(thread)
-    thread.start()
+# # Create and start threads
+# for i in range(num_threads):
+#     thread = threading.Thread(target=test_book_hall, name=f"Thread-{i+1}")
+#     threads.append(thread)
+#     thread.start()
 
-# Wait for all threads to complete
-for thread in threads:
-    thread.join()
+# # Wait for all threads to complete
+# for thread in threads:
+#     thread.join()
 
-print("All threads have finished execution.")
+# print("All threads have finished execution.")
+# dateStr = input("enter date: ")
+# print(datetime.fromisoformat(dateStr))

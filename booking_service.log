@@ -1335,3 +1335,110 @@
 2024-08-16 11:05:40,011 - INFO - Received fetch available hall request: Start: 2024-08-01T10:00:00, End: 2024-08-30T11:00:00
 2024-08-16 11:05:43,696 - INFO - Received fetch bookings request: Start: 2024-08-01, End: 2024-08-30
 2024-08-16 11:05:43,697 - INFO - Fetch bookings success: Start: 2024-08-01, End: 2024-08-30
+2024-08-16 13:02:15,339 - INFO - Received booking request: Hall F, Start: 2024-09-20T10:00:00, End: 2024-09-20T12:00:00
+2024-08-16 13:02:15,340 - INFO - Received fetch available hall request: Start: 2024-09-20T10:00:00, End: 2024-09-20T12:00:00
+2024-08-16 13:05:29,494 - INFO - Received booking request: Hall F, Start: 2024-09-20T10:00:00, End: 2024-09-20T12:00:00
+2024-08-16 13:05:29,495 - INFO - Received fetch available hall request: Start: 2024-09-20T10:00:00, End: 2024-09-20T12:00:00
+2024-08-16 13:05:29,498 - INFO - Booking successful for hall F. Booking ID: None
+2024-08-16 13:08:27,312 - INFO - Received booking request: Hall F, Start: 2024-09-20T10:00:00, End: 2024-09-20T12:00:00
+2024-08-16 13:08:27,312 - INFO - Received fetch available hall request: Start: 2024-09-20T10:00:00, End: 2024-09-20T12:00:00
+2024-08-16 13:08:40,235 - INFO - Received booking request: Hall D, Start: 2024-09-20T10:00:00, End: 2024-09-20T12:00:00
+2024-08-16 13:08:40,235 - INFO - Received fetch available hall request: Start: 2024-09-20T10:00:00, End: 2024-09-20T12:00:00
+2024-08-16 13:08:40,238 - INFO - Booking successful for hall D. Booking ID: d6f23e
+2024-08-16 13:22:13,492 - INFO - Received fetch bookings request: Start: 2024-08-01, End: 2024-08-30
+2024-08-16 13:22:13,493 - INFO - Fetch bookings success: Start: 2024-08-01, End: 2024-08-30
+2024-08-16 13:22:16,457 - INFO - Received fetch bookings request: Start: 2024-08-01, End: 2024-08-30
+2024-08-16 13:22:16,457 - INFO - Fetch bookings success: Start: 2024-08-01, End: 2024-08-30
+2024-08-16 13:22:53,281 - INFO - Received fetch bookings request: Start: 2024-08-01, End: 2024-08-30
+2024-08-16 13:22:53,282 - INFO - Fetch bookings success: Start: 2024-08-01, End: 2024-08-30
+2024-08-16 13:26:55,993 - INFO - Received fetch bookings request: Start: 2024-08-01, End: 2024-08-30
+2024-08-16 13:26:55,993 - ERROR - Fetch bookings failed,  Start: 2024-08-01, End: 2024-08-30: unsupported operand type(s) for +: 'datetime.datetime' and 'str'
+2024-08-16 13:26:56,896 - INFO - Received fetch bookings request: Start: 2024-08-01, End: 2024-08-30
+2024-08-16 13:26:56,896 - ERROR - Fetch bookings failed,  Start: 2024-08-01, End: 2024-08-30: unsupported operand type(s) for +: 'datetime.datetime' and 'str'
+2024-08-16 13:26:57,627 - INFO - Received fetch bookings request: Start: 2024-08-01, End: 2024-08-30
+2024-08-16 13:26:57,628 - ERROR - Fetch bookings failed,  Start: 2024-08-01, End: 2024-08-30: unsupported operand type(s) for +: 'datetime.datetime' and 'str'
+2024-08-16 13:27:00,894 - INFO - Received fetch bookings request: Start: 2024-08-01, End: 2024-08-30
+2024-08-16 13:27:00,894 - ERROR - Fetch bookings failed,  Start: 2024-08-01, End: 2024-08-30: unsupported operand type(s) for +: 'datetime.datetime' and 'str'
+2024-08-16 13:27:55,942 - INFO - Received fetch bookings request: Start: 2024-08-01, End: 2024-08-30
+2024-08-16 13:27:55,942 - ERROR - Fetch bookings failed,  Start: 2024-08-01, End: 2024-08-30: unsupported operand type(s) for +: 'datetime.datetime' and 'str'
+2024-08-16 13:27:56,835 - INFO - Received fetch bookings request: Start: 2024-08-01, End: 2024-08-30
+2024-08-16 13:27:56,835 - ERROR - Fetch bookings failed,  Start: 2024-08-01, End: 2024-08-30: unsupported operand type(s) for +: 'datetime.datetime' and 'str'
+2024-08-16 13:28:36,316 - INFO - Received fetch bookings request: Start: 2024-08-01, End: 2024-08-30
+2024-08-16 13:28:36,316 - ERROR - Fetch bookings failed,  Start: 2024-08-01, End: 2024-08-30: unsupported operand type(s) for +: 'datetime.datetime' and 'str'
+2024-08-16 13:29:58,353 - INFO - Received fetch bookings request: Start: 2024-08-01, End: 2024-08-30
+2024-08-16 13:29:58,353 - ERROR - Fetch bookings failed,  Start: 2024-08-01, End: 2024-08-30: unsupported operand type(s) for +: 'datetime.datetime' and 'str'
+2024-08-16 13:30:18,506 - INFO - Received fetch bookings request: Start: 2024-08-01, End: 2024-08-30
+2024-08-16 13:30:18,507 - ERROR - Fetch bookings failed,  Start: 2024-08-01, End: 2024-08-30: unsupported operand type(s) for +: 'datetime.datetime' and 'str'
+2024-08-16 13:32:11,725 - INFO - Received fetch bookings request: Start: 2024-08-01, End: 2024-08-30
+2024-08-16 13:32:11,728 - INFO - Fetch bookings success: Start: 2024-08-01, End: 2024-08-30
+2024-08-16 13:32:23,593 - INFO - Received fetch bookings request: Start: 2024-08-01, End: 2024-08-30
+2024-08-16 13:32:23,595 - INFO - Fetch bookings success: Start: 2024-08-01, End: 2024-08-30
+2024-08-16 13:32:58,905 - INFO - Received fetch bookings request: Start: 2024-08-01, End: 2024-08-30
+2024-08-16 13:32:58,909 - INFO - Fetch bookings success: Start: 2024-08-01, End: 2024-08-30
+2024-08-16 15:32:37,826 - INFO - Received fetch available hall request: Start: 2024-08-01T10:00:00, End: 2024-08-30T11:00:00
+2024-08-16 15:32:40,575 - INFO - Received fetch bookings request: Start: 2024-08-01, End: 2024-08-30
+2024-08-16 15:32:40,576 - INFO - Fetch bookings success: Start: 2024-08-01, End: 2024-08-30
+2024-08-16 15:32:43,491 - INFO - Received booking request: Hall F, Start: 2024-07-15T10:00:00, End: 2024-07-15T12:00:00
+2024-08-16 15:32:43,491 - INFO - Received fetch available hall request: Start: 2024-07-15T10:00:00, End: 2024-07-15T12:00:00
+2024-08-16 15:32:43,492 - INFO - Booking successful for hall F. Booking ID: 207693
+2024-08-16 15:32:48,484 - INFO - Received booking request: Hall B, Start: 2024-08-01T10:00:00, End: 2024-08-01T12:00:00
+2024-08-16 15:32:48,484 - INFO - Received fetch available hall request: Start: 2024-08-01T10:00:00, End: 2024-08-01T12:00:00
+2024-08-16 15:32:48,486 - INFO - Booking successful for hall B. Booking ID: 207694
+2024-08-16 15:32:48,486 - INFO - Received booking request: Hall E, Start: 2024-01-01T13:00:00, End: 2024-09-01T15:00:00
+2024-08-16 15:32:48,486 - INFO - Received fetch available hall request: Start: 2024-01-01T13:00:00, End: 2024-09-01T15:00:00
+2024-08-16 15:32:48,487 - INFO - Booking successful for hall E. Booking ID: 207695
+2024-08-16 15:32:48,487 - INFO - Received booking request: Hall C, Start: 2024-08-01T16:00:00, End: 2024-08-01T18:00:00
+2024-08-16 15:32:48,487 - INFO - Received fetch available hall request: Start: 2024-08-01T16:00:00, End: 2024-08-01T18:00:00
+2024-08-16 15:32:48,489 - INFO - Booking successful for hall C. Booking ID: 207696
+2024-08-16 15:32:53,279 - INFO - Received fetch bookings request: Start: 2024-08-01, End: 2024-08-30
+2024-08-16 15:32:53,280 - INFO - Fetch bookings success: Start: 2024-08-01, End: 2024-08-30
+2024-08-16 15:33:17,533 - INFO - Received update request: Booking ID: 207694, Start: 2024-08-01T10:00:00, End: 2024-08-20T11:00:00
+2024-08-16 15:33:17,535 - INFO - Update success, Booking ID: 207694, Start: 2024-08-01T10:00:00, End: 2024-08-20T11:00:00
+2024-08-16 15:33:52,183 - INFO - Received cancellation request: Booking ID: 207696
+2024-08-16 15:34:17,092 - INFO - Received booking request: Hall A, Start: 2024-08-09T06:00, End: 2024-08-09T07:00
+2024-08-16 15:34:17,092 - INFO - Received booking request: Hall A, Start: 2024-08-09T08:00, End: 2024-08-09T11:00
+2024-08-16 15:34:17,093 - INFO - Received booking request: Hall A, Start: 2024-08-09T12:00, End: 2024-08-09T13:00
+2024-08-16 15:34:17,093 - INFO - Received fetch available hall request: Start: 2024-08-09T06:00, End: 2024-08-09T07:00
+2024-08-16 15:34:17,093 - INFO - Received booking request: Hall A, Start: 2024-08-09T16:00, End: 2024-08-09T17:00
+2024-08-16 15:34:17,093 - INFO - Received fetch available hall request: Start: 2024-08-09T08:00, End: 2024-08-09T11:00
+2024-08-16 15:34:17,094 - INFO - Received fetch available hall request: Start: 2024-08-09T12:00, End: 2024-08-09T13:00
+2024-08-16 15:34:17,094 - INFO - Received fetch available hall request: Start: 2024-08-09T16:00, End: 2024-08-09T17:00
+2024-08-16 15:34:17,095 - INFO - Booking successful for hall A. Booking ID: 23dd40
+2024-08-16 15:34:17,096 - INFO - Booking successful for hall A. Booking ID: 23dd41
+2024-08-16 15:34:17,097 - INFO - Booking successful for hall A. Booking ID: 23dd42
+2024-08-16 15:34:17,097 - INFO - Booking successful for hall A. Booking ID: 23dd43
+2024-08-16 15:34:17,097 - INFO - Received booking request: Hall F, Start: 2024-08-10T14:00, End: 2024-08-10T15:00
+2024-08-16 15:34:17,097 - INFO - Received booking request: Hall F, Start: 2024-08-10T14:00, End: 2024-08-10T15:00
+2024-08-16 15:34:17,097 - INFO - Received booking request: Hall F, Start: 2024-08-10T14:00, End: 2024-08-10T15:00
+2024-08-16 15:34:17,098 - INFO - Received booking request: Hall B, Start: 2024-08-10T14:30, End: 2024-08-10T15:30
+2024-08-16 15:34:17,098 - INFO - Received fetch available hall request: Start: 2024-08-10T14:00, End: 2024-08-10T15:00
+2024-08-16 15:34:17,098 - INFO - Received booking request: Hall B, Start: 2024-08-10T14:30, End: 2024-08-10T15:30
+2024-08-16 15:34:17,098 - INFO - Received booking request: Hall B, Start: 2024-08-10T14:30, End: 2024-08-10T15:30
+2024-08-16 15:34:17,098 - INFO - Received fetch available hall request: Start: 2024-08-10T14:30, End: 2024-08-10T15:30
+2024-08-16 15:34:17,100 - INFO - Booking successful for hall F. Booking ID: 23dd44
+2024-08-16 15:34:17,100 - INFO - Received fetch available hall request: Start: 2024-08-10T14:00, End: 2024-08-10T15:00
+2024-08-16 15:34:17,100 - INFO - Booking successful for hall B. Booking ID: 23dd45
+2024-08-16 15:34:17,101 - INFO - Received fetch available hall request: Start: 2024-08-10T14:30, End: 2024-08-10T15:30
+2024-08-16 15:34:17,101 - INFO - Received fetch available hall request: Start: 2024-08-10T14:00, End: 2024-08-10T15:00
+2024-08-16 15:34:17,102 - INFO - Received fetch available hall request: Start: 2024-08-10T14:30, End: 2024-08-10T15:30
+2024-08-16 15:34:17,102 - INFO - Received update request: Booking ID: 23dd40, Start: 2024-09-09T16:00, End: 2024-09-09T17:00
+2024-08-16 15:34:17,102 - INFO - Received update request: Booking ID: 23dd41, Start: 2024-09-09T16:00, End: 2024-09-09T17:00
+2024-08-16 15:34:17,104 - INFO - Update success, Booking ID: 23dd40, Start: 2024-09-09T16:00, End: 2024-09-09T17:00
+2024-08-16 15:34:23,519 - INFO - Received fetch available hall request: Start: 2024-08-01T10:00:00, End: 2024-08-01T11:00:00
+2024-08-16 15:34:23,520 - INFO - Received booking request: Hall F, Start: 2024-08-01T10:00:00, End: 2024-08-02T12:00:00
+2024-08-16 15:34:23,520 - INFO - Received fetch available hall request: Start: 2024-08-01T10:00:00, End: 2024-08-02T12:00:00
+2024-08-16 15:34:23,521 - INFO - Booking successful for hall F. Booking ID: 9ea0fa
+2024-08-16 15:34:23,522 - INFO - Received booking request: Hall B, Start: 2024-08-01T10:00:00, End: 2024-08-01T12:00:00
+2024-08-16 15:34:23,522 - INFO - Received fetch available hall request: Start: 2024-08-01T10:00:00, End: 2024-08-01T12:00:00
+2024-08-16 15:34:23,523 - INFO - Booking successful for hall B. Booking ID: 9ea0fb
+2024-08-16 15:34:23,523 - INFO - Received booking request: Hall E, Start: 2024-09-01T13:00:00, End: 2024-09-01T15:00:00
+2024-08-16 15:34:23,523 - INFO - Received fetch available hall request: Start: 2024-09-01T13:00:00, End: 2024-09-01T15:00:00
+2024-08-16 15:34:23,524 - INFO - Booking successful for hall E. Booking ID: 9ea0fc
+2024-08-16 15:34:23,524 - INFO - Received booking request: Hall C, Start: 2024-08-01T16:00:00, End: 2024-08-01T18:00:00
+2024-08-16 15:34:23,524 - INFO - Received fetch available hall request: Start: 2024-08-01T16:00:00, End: 2024-08-01T18:00:00
+2024-08-16 15:34:23,526 - INFO - Booking successful for hall C. Booking ID: 9ea0fd
+2024-08-16 15:34:23,526 - INFO - Received fetch bookings request: Start: 2024-08-01, End: 2024-08-01
+2024-08-16 15:34:23,526 - INFO - Fetch bookings success: Start: 2024-08-01, End: 2024-08-01
+2024-08-16 15:34:23,526 - INFO - Received update request: Booking ID: 9ea0fa, Start: 2024-08-03T14:00:00, End: 2025-08-04T16:00:00
+2024-08-16 15:34:23,527 - INFO - Update success, Booking ID: 9ea0fa, Start: 2024-08-03T14:00:00, End: 2025-08-04T16:00:00
+2024-08-16 15:34:23,528 - INFO - Received cancellation request: Booking ID: 9ea0fa

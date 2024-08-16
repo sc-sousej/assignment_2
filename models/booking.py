@@ -7,5 +7,5 @@ class Booking:
         self.end_time = end_time
         self.booking_id = booking_id
 
-    def set_booking_id(self, object_id):
-        self.booking_id = str(object_id)[-6:]
+    # def set_booking_id(self, object_id):
+    #     self.booking_id = str(object_id)[-6:]
