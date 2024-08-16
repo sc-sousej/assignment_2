@@ -1,23 +1,24 @@
 import unittest
 from dotenv import load_dotenv
 import os
-from services.booking_service import BookingService
+from controller.booking_controller import BookingController
+
 
 load_dotenv()
 
-class TestBookingService(unittest.TestCase):
+class TestBookingcontroller(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.service = BookingService()
+        cls.controller = BookingController()
         cls.test_booking_id = ""
 
     def test_01_fetch_available_halls(self):
-        available_halls = self.service.fetch_available_halls("2024-08-01T10:00:00", "2024-08-01T11:00:00")
+        available_halls = self.controller.fetch_available_halls("2024-08-01T10:00:00", "2024-08-01T11:00:00")
         # print(available_halls)
         self.assertIn("F", available_halls)
 
     def test_02_book_hall(self):
-        result = self.service.book_hall("F", "2024-08-01T10:00:00", "2024-08-02T12:00:00")
+        result = self.controller.book_hall("F", "2024-08-01T10:00:00", "2024-08-02T12:00:00")
         self.__class__.test_booking_id = result[-6:]  # Store the booking ID for other tests
         self.assertIn("successful", result)
 
@@ -30,26 +31,26 @@ class TestBookingService(unittest.TestCase):
             ]
         }
         for booking_data in data['bookings']:
-            result = self.service.book_hall(booking_data['hall_id'], booking_data['start_time'], booking_data['end_time'])
+            result = self.controller.book_hall(booking_data['hall_id'], booking_data['start_time'], booking_data['end_time'])
             self.assertIn("successful", result)
 
     def test_04_fetch_all_booked_halls(self):
-        all_booked_halls = self.service.fetch_bookings("2024-08-01", "2024-08-01")
+        all_booked_halls = self.controller.fetch_bookings("2024-08-01", "2024-08-01")
         # print("hello ", len(all_booked_halls))
         self.assertEqual(len(all_booked_halls), 3)
 
     def test_05_update_booking(self):
-        result = self.service.update_booking(self.__class__.test_booking_id, "2024-08-03T14:00:00", "2025-08-04T16:00:00")
+        result = self.controller.update_booking(self.__class__.test_booking_id, "2024-08-03T14:00:00", "2025-08-04T16:00:00")
         # print(result)
         self.assertIn("updated successfully", result)
 
     def test_06_delete_booking(self):
-        result = self.service.cancel_booking(self.__class__.test_booking_id)
+        result = self.controller.cancel_booking(self.__class__.test_booking_id)
         # print(result)
         self.assertIn("cancelled successfully", result)
 
 if __name__ == '__main__':
-    service = BookingService()
-    service.delete_all_bookings()
+    controller = BookingController()
+    controller.delete_all_bookings()
     
     unittest.main()

@@ -1303,3 +1303,512 @@
 2024-08-14 15:05:49,835 - INFO - Lock request received, Hall id: F, start: 2024-08-03T14:00:00, end: 2025-08-04T16:00:00
 2024-08-14 15:05:49,835 - INFO - Lock Aquired, Hall id: F, start: 2024-08-03 14:00:00, end: 2025-08-04 16:00:00
 2024-08-14 15:05:49,836 - INFO - Lock Released, Hall id: F, start: 2024-08-03 14:00:00, end: 2025-08-04 16:00:00
+2024-08-14 15:40:30,887 - INFO - Lock request received, Hall id: F, start: 2024-08-01T10:00:00, end: 2024-08-02T12:00:00
+2024-08-14 15:40:30,887 - INFO - Lock Aquired, Hall id: F, start: 2024-08-01 10:00:00, end: 2024-08-02 12:00:00
+2024-08-14 15:40:30,888 - INFO - Lock Released, Hall id: F, start: 2024-08-01 10:00:00, end: 2024-08-02 12:00:00
+2024-08-14 15:40:30,889 - INFO - Lock request received, Hall id: B, start: 2024-08-01T10:00:00, end: 2024-08-01T12:00:00
+2024-08-14 15:40:30,889 - INFO - Lock Aquired, Hall id: B, start: 2024-08-01 10:00:00, end: 2024-08-01 12:00:00
+2024-08-14 15:40:30,890 - INFO - Lock Released, Hall id: B, start: 2024-08-01 10:00:00, end: 2024-08-01 12:00:00
+2024-08-14 15:40:30,890 - INFO - Lock request received, Hall id: E, start: 2024-09-01T13:00:00, end: 2024-09-01T15:00:00
+2024-08-14 15:40:30,890 - INFO - Lock Aquired, Hall id: E, start: 2024-09-01 13:00:00, end: 2024-09-01 15:00:00
+2024-08-14 15:40:30,891 - INFO - Lock Released, Hall id: E, start: 2024-09-01 13:00:00, end: 2024-09-01 15:00:00
+2024-08-14 15:40:30,891 - INFO - Lock request received, Hall id: C, start: 2024-08-01T16:00:00, end: 2024-08-01T18:00:00
+2024-08-14 15:40:30,891 - INFO - Lock Aquired, Hall id: C, start: 2024-08-01 16:00:00, end: 2024-08-01 18:00:00
+2024-08-14 15:40:30,893 - INFO - Lock Released, Hall id: C, start: 2024-08-01 16:00:00, end: 2024-08-01 18:00:00
+2024-08-14 15:40:30,894 - INFO - Lock request received, Hall id: F, start: 2024-08-01T10:00:00, end: 2024-08-02T12:00:00
+2024-08-14 15:40:30,894 - INFO - Lock Aquired, Hall id: F, start: 2024-08-01 10:00:00, end: 2024-08-02 12:00:00
+2024-08-14 15:40:30,894 - INFO - Lock request received, Hall id: F, start: 2024-08-03T14:00:00, end: 2025-08-04T16:00:00
+2024-08-14 15:40:30,894 - INFO - Lock Aquired, Hall id: F, start: 2024-08-03 14:00:00, end: 2025-08-04 16:00:00
+2024-08-14 15:40:30,895 - INFO - Lock Released, Hall id: F, start: 2024-08-01 10:00:00, end: 2024-08-02 12:00:00
+2024-08-14 15:40:30,895 - INFO - Lock Released, Hall id: F, start: 2024-08-03 14:00:00, end: 2025-08-04 16:00:00
+2024-08-14 15:40:30,896 - INFO - Lock request received, Hall id: F, start: 2024-08-03T14:00:00, end: 2025-08-04T16:00:00
+2024-08-14 15:40:30,896 - INFO - Lock Aquired, Hall id: F, start: 2024-08-03 14:00:00, end: 2025-08-04 16:00:00
+2024-08-14 15:40:30,896 - INFO - Lock Released, Hall id: F, start: 2024-08-03 14:00:00, end: 2025-08-04 16:00:00
+2024-08-14 15:40:33,706 - INFO - Lock request received, Hall id: A, start: 2024-08-09T06:00, end: 2024-08-09T07:00
+2024-08-14 15:40:33,706 - INFO - Lock Aquired, Hall id: A, start: 2024-08-09 06:00:00, end: 2024-08-09 07:00:00
+2024-08-14 15:40:33,706 - INFO - Lock request received, Hall id: A, start: 2024-08-09T08:00, end: 2024-08-09T11:00
+2024-08-14 15:40:33,707 - INFO - Lock Aquired, Hall id: A, start: 2024-08-09 08:00:00, end: 2024-08-09 11:00:00
+2024-08-14 15:40:33,707 - INFO - Lock request received, Hall id: A, start: 2024-08-09T12:00, end: 2024-08-09T13:00
+2024-08-14 15:40:33,707 - INFO - Lock Aquired, Hall id: A, start: 2024-08-09 12:00:00, end: 2024-08-09 13:00:00
+2024-08-14 15:40:33,707 - INFO - Lock request received, Hall id: A, start: 2024-08-09T16:00, end: 2024-08-09T17:00
+2024-08-14 15:40:33,708 - INFO - Lock Aquired, Hall id: A, start: 2024-08-09 16:00:00, end: 2024-08-09 17:00:00
+2024-08-14 15:40:33,709 - INFO - Lock Released, Hall id: A, start: 2024-08-09 06:00:00, end: 2024-08-09 07:00:00
+2024-08-14 15:40:33,711 - INFO - Lock Released, Hall id: A, start: 2024-08-09 12:00:00, end: 2024-08-09 13:00:00
+2024-08-14 15:40:33,711 - INFO - Lock Released, Hall id: A, start: 2024-08-09 08:00:00, end: 2024-08-09 11:00:00
+2024-08-14 15:40:33,711 - INFO - Lock Released, Hall id: A, start: 2024-08-09 16:00:00, end: 2024-08-09 17:00:00
+2024-08-14 15:40:33,712 - INFO - Lock request received, Hall id: F, start: 2024-08-10T14:00, end: 2024-08-10T15:00
+2024-08-14 15:40:33,712 - INFO - Lock Aquired, Hall id: F, start: 2024-08-10 14:00:00, end: 2024-08-10 15:00:00
+2024-08-14 15:40:33,712 - INFO - Lock request received, Hall id: F, start: 2024-08-10T14:00, end: 2024-08-10T15:00
+2024-08-14 15:40:33,712 - INFO - Waiting for lock, Hall id: F, start: 2024-08-10 14:00:00, end: 2024-08-10 15:00:00
+2024-08-14 15:40:33,712 - INFO - Lock request received, Hall id: F, start: 2024-08-10T14:00, end: 2024-08-10T15:00
+2024-08-14 15:40:33,712 - INFO - Lock request received, Hall id: B, start: 2024-08-10T14:30, end: 2024-08-10T15:30
+2024-08-14 15:40:33,713 - INFO - Waiting for lock, Hall id: F, start: 2024-08-10 14:00:00, end: 2024-08-10 15:00:00
+2024-08-14 15:40:33,713 - INFO - Lock request received, Hall id: B, start: 2024-08-10T14:30, end: 2024-08-10T15:30
+2024-08-14 15:40:33,713 - INFO - Lock Aquired, Hall id: B, start: 2024-08-10 14:30:00, end: 2024-08-10 15:30:00
+2024-08-14 15:40:33,713 - INFO - Lock request received, Hall id: B, start: 2024-08-10T14:30, end: 2024-08-10T15:30
+2024-08-14 15:40:33,714 - INFO - Waiting for lock, Hall id: B, start: 2024-08-10 14:30:00, end: 2024-08-10 15:30:00
+2024-08-14 15:40:33,714 - INFO - Waiting for lock, Hall id: B, start: 2024-08-10 14:30:00, end: 2024-08-10 15:30:00
+2024-08-14 15:40:33,714 - INFO - Lock Released, Hall id: F, start: 2024-08-10 14:00:00, end: 2024-08-10 15:00:00
+2024-08-14 15:40:33,715 - ERROR - Lock wait timeout, Hall id: F, start: 2024-08-10 14:00:00, end: 2024-08-10 15:00:00
+2024-08-14 15:40:33,715 - INFO - Lock Aquired, Hall id: F, start: 2024-08-10 14:00:00, end: 2024-08-10 15:00:00
+2024-08-14 15:40:33,715 - ERROR - Lock wait timeout, Hall id: F, start: 2024-08-10 14:00:00, end: 2024-08-10 15:00:00
+2024-08-14 15:40:33,715 - INFO - Waiting for lock, Hall id: F, start: 2024-08-10 14:00:00, end: 2024-08-10 15:00:00
+2024-08-14 15:40:33,715 - INFO - Lock Released, Hall id: B, start: 2024-08-10 14:30:00, end: 2024-08-10 15:30:00
+2024-08-14 15:40:33,715 - INFO - Lock Released, Hall id: F, start: 2024-08-10 14:00:00, end: 2024-08-10 15:00:00
+2024-08-14 15:40:33,715 - ERROR - Lock wait timeout, Hall id: B, start: 2024-08-10 14:30:00, end: 2024-08-10 15:30:00
+2024-08-14 15:40:33,716 - ERROR - Lock wait timeout, Hall id: F, start: 2024-08-10 14:00:00, end: 2024-08-10 15:00:00
+2024-08-14 15:40:33,716 - INFO - Lock Aquired, Hall id: B, start: 2024-08-10 14:30:00, end: 2024-08-10 15:30:00
+2024-08-14 15:40:33,716 - INFO - Lock Aquired, Hall id: F, start: 2024-08-10 14:00:00, end: 2024-08-10 15:00:00
+2024-08-14 15:40:33,716 - ERROR - Lock wait timeout, Hall id: B, start: 2024-08-10 14:30:00, end: 2024-08-10 15:30:00
+2024-08-14 15:40:33,716 - INFO - Waiting for lock, Hall id: B, start: 2024-08-10 14:30:00, end: 2024-08-10 15:30:00
+2024-08-14 15:40:33,716 - INFO - Lock Released, Hall id: B, start: 2024-08-10 14:30:00, end: 2024-08-10 15:30:00
+2024-08-14 15:40:33,716 - ERROR - Lock wait timeout, Hall id: B, start: 2024-08-10 14:30:00, end: 2024-08-10 15:30:00
+2024-08-14 15:40:33,716 - INFO - Lock Aquired, Hall id: B, start: 2024-08-10 14:30:00, end: 2024-08-10 15:30:00
+2024-08-14 15:40:33,716 - INFO - Lock Released, Hall id: F, start: 2024-08-10 14:00:00, end: 2024-08-10 15:00:00
+2024-08-14 15:40:33,717 - INFO - Lock Released, Hall id: B, start: 2024-08-10 14:30:00, end: 2024-08-10 15:30:00
+2024-08-14 15:40:33,718 - INFO - Lock request received, Hall id: A, start: 2024-08-09T06:00, end: 2024-08-09T07:00
+2024-08-14 15:40:33,718 - INFO - Lock Aquired, Hall id: A, start: 2024-08-09 06:00:00, end: 2024-08-09 07:00:00
+2024-08-14 15:40:33,718 - INFO - Lock request received, Hall id: A, start: 2024-09-09T16:00, end: 2024-09-09T17:00
+2024-08-14 15:40:33,718 - INFO - Lock Aquired, Hall id: A, start: 2024-09-09 16:00:00, end: 2024-09-09 17:00:00
+2024-08-14 15:40:33,718 - INFO - Lock request received, Hall id: A, start: 2024-08-09T12:00, end: 2024-08-09T13:00
+2024-08-14 15:40:33,718 - INFO - Lock Aquired, Hall id: A, start: 2024-08-09 12:00:00, end: 2024-08-09 13:00:00
+2024-08-14 15:40:33,718 - INFO - Lock request received, Hall id: A, start: 2024-09-09T16:00, end: 2024-09-09T17:00
+2024-08-14 15:40:33,718 - INFO - Waiting for lock, Hall id: A, start: 2024-09-09 16:00:00, end: 2024-09-09 17:00:00
+2024-08-14 15:40:33,719 - INFO - Lock Released, Hall id: A, start: 2024-08-09 06:00:00, end: 2024-08-09 07:00:00
+2024-08-14 15:40:33,719 - INFO - Lock Released, Hall id: A, start: 2024-09-09 16:00:00, end: 2024-09-09 17:00:00
+2024-08-14 15:40:33,719 - ERROR - Lock wait timeout, Hall id: A, start: 2024-09-09 16:00:00, end: 2024-09-09 17:00:00
+2024-08-14 15:40:33,719 - INFO - Lock Aquired, Hall id: A, start: 2024-09-09 16:00:00, end: 2024-09-09 17:00:00
+2024-08-14 15:40:33,719 - INFO - Lock Released, Hall id: A, start: 2024-08-09 12:00:00, end: 2024-08-09 13:00:00
+2024-08-14 15:40:33,719 - INFO - Lock Released, Hall id: A, start: 2024-09-09 16:00:00, end: 2024-09-09 17:00:00
+2024-08-14 15:42:20,922 - INFO - Lock request received, Hall id: A, start: 2024-08-09T06:00, end: 2024-08-09T07:00
+2024-08-14 15:42:20,922 - INFO - Lock Aquired, Hall id: A, start: 2024-08-09 06:00:00, end: 2024-08-09 07:00:00
+2024-08-14 15:42:20,922 - INFO - Lock request received, Hall id: A, start: 2024-08-09T08:00, end: 2024-08-09T11:00
+2024-08-14 15:42:20,923 - INFO - Lock Aquired, Hall id: A, start: 2024-08-09 08:00:00, end: 2024-08-09 11:00:00
+2024-08-14 15:42:20,923 - INFO - Lock request received, Hall id: A, start: 2024-08-09T12:00, end: 2024-08-09T13:00
+2024-08-14 15:42:20,923 - INFO - Lock Aquired, Hall id: A, start: 2024-08-09 12:00:00, end: 2024-08-09 13:00:00
+2024-08-14 15:42:20,923 - INFO - Lock request received, Hall id: A, start: 2024-08-09T16:00, end: 2024-08-09T17:00
+2024-08-14 15:42:20,924 - INFO - Lock Aquired, Hall id: A, start: 2024-08-09 16:00:00, end: 2024-08-09 17:00:00
+2024-08-14 15:42:20,925 - INFO - Lock Released, Hall id: A, start: 2024-08-09 06:00:00, end: 2024-08-09 07:00:00
+2024-08-14 15:42:20,926 - INFO - Lock Released, Hall id: A, start: 2024-08-09 08:00:00, end: 2024-08-09 11:00:00
+2024-08-14 15:42:20,926 - INFO - Lock Released, Hall id: A, start: 2024-08-09 12:00:00, end: 2024-08-09 13:00:00
+2024-08-14 15:42:20,927 - INFO - Lock Released, Hall id: A, start: 2024-08-09 16:00:00, end: 2024-08-09 17:00:00
+2024-08-14 15:42:20,927 - INFO - Lock request received, Hall id: F, start: 2024-08-10T14:00, end: 2024-08-10T15:00
+2024-08-14 15:42:20,927 - INFO - Lock Aquired, Hall id: F, start: 2024-08-10 14:00:00, end: 2024-08-10 15:00:00
+2024-08-14 15:42:20,927 - INFO - Lock request received, Hall id: F, start: 2024-08-10T14:00, end: 2024-08-10T15:00
+2024-08-14 15:42:20,927 - INFO - Waiting for lock, Hall id: F, start: 2024-08-10 14:00:00, end: 2024-08-10 15:00:00
+2024-08-14 15:42:20,927 - INFO - Lock request received, Hall id: F, start: 2024-08-10T14:00, end: 2024-08-10T15:00
+2024-08-14 15:42:20,927 - INFO - Waiting for lock, Hall id: F, start: 2024-08-10 14:00:00, end: 2024-08-10 15:00:00
+2024-08-14 15:42:20,928 - INFO - Lock request received, Hall id: B, start: 2024-08-10T14:30, end: 2024-08-10T15:30
+2024-08-14 15:42:20,928 - INFO - Lock Aquired, Hall id: B, start: 2024-08-10 14:30:00, end: 2024-08-10 15:30:00
+2024-08-14 15:42:20,928 - INFO - Lock request received, Hall id: B, start: 2024-08-10T14:30, end: 2024-08-10T15:30
+2024-08-14 15:42:20,928 - INFO - Waiting for lock, Hall id: B, start: 2024-08-10 14:30:00, end: 2024-08-10 15:30:00
+2024-08-14 15:42:20,928 - INFO - Lock request received, Hall id: B, start: 2024-08-10T14:30, end: 2024-08-10T15:30
+2024-08-14 15:42:20,929 - INFO - Waiting for lock, Hall id: B, start: 2024-08-10 14:30:00, end: 2024-08-10 15:30:00
+2024-08-14 15:42:20,929 - INFO - Lock Released, Hall id: F, start: 2024-08-10 14:00:00, end: 2024-08-10 15:00:00
+2024-08-14 15:42:20,930 - ERROR - Lock wait timeout, Hall id: F, start: 2024-08-10 14:00:00, end: 2024-08-10 15:00:00
+2024-08-14 15:42:20,930 - INFO - Lock Aquired, Hall id: F, start: 2024-08-10 14:00:00, end: 2024-08-10 15:00:00
+2024-08-14 15:42:20,930 - INFO - Lock Released, Hall id: B, start: 2024-08-10 14:30:00, end: 2024-08-10 15:30:00
+2024-08-14 15:42:20,930 - ERROR - Lock wait timeout, Hall id: F, start: 2024-08-10 14:00:00, end: 2024-08-10 15:00:00
+2024-08-14 15:42:20,930 - ERROR - Lock wait timeout, Hall id: B, start: 2024-08-10 14:30:00, end: 2024-08-10 15:30:00
+2024-08-14 15:42:20,930 - INFO - Waiting for lock, Hall id: F, start: 2024-08-10 14:00:00, end: 2024-08-10 15:00:00
+2024-08-14 15:42:20,930 - INFO - Lock Aquired, Hall id: B, start: 2024-08-10 14:30:00, end: 2024-08-10 15:30:00
+2024-08-14 15:42:20,930 - ERROR - Lock wait timeout, Hall id: B, start: 2024-08-10 14:30:00, end: 2024-08-10 15:30:00
+2024-08-14 15:42:20,930 - INFO - Waiting for lock, Hall id: B, start: 2024-08-10 14:30:00, end: 2024-08-10 15:30:00
+2024-08-14 15:42:20,931 - INFO - Lock Released, Hall id: F, start: 2024-08-10 14:00:00, end: 2024-08-10 15:00:00
+2024-08-14 15:42:20,931 - ERROR - Lock wait timeout, Hall id: F, start: 2024-08-10 14:00:00, end: 2024-08-10 15:00:00
+2024-08-14 15:42:20,931 - INFO - Lock Aquired, Hall id: F, start: 2024-08-10 14:00:00, end: 2024-08-10 15:00:00
+2024-08-14 15:42:20,931 - INFO - Lock Released, Hall id: B, start: 2024-08-10 14:30:00, end: 2024-08-10 15:30:00
+2024-08-14 15:42:20,931 - ERROR - Lock wait timeout, Hall id: B, start: 2024-08-10 14:30:00, end: 2024-08-10 15:30:00
+2024-08-14 15:42:20,931 - INFO - Lock Aquired, Hall id: B, start: 2024-08-10 14:30:00, end: 2024-08-10 15:30:00
+2024-08-14 15:42:20,932 - INFO - Lock Released, Hall id: F, start: 2024-08-10 14:00:00, end: 2024-08-10 15:00:00
+2024-08-14 15:42:20,932 - INFO - Lock Released, Hall id: B, start: 2024-08-10 14:30:00, end: 2024-08-10 15:30:00
+2024-08-14 15:42:20,933 - INFO - Lock request received, Hall id: A, start: 2024-08-09T06:00, end: 2024-08-09T07:00
+2024-08-14 15:42:20,933 - INFO - Lock Aquired, Hall id: A, start: 2024-08-09 06:00:00, end: 2024-08-09 07:00:00
+2024-08-14 15:42:20,933 - INFO - Lock request received, Hall id: A, start: 2024-09-09T16:00, end: 2024-09-09T17:00
+2024-08-14 15:42:20,933 - INFO - Lock Aquired, Hall id: A, start: 2024-09-09 16:00:00, end: 2024-09-09 17:00:00
+2024-08-14 15:42:20,933 - INFO - Lock request received, Hall id: A, start: 2024-08-09T08:00, end: 2024-08-09T11:00
+2024-08-14 15:42:20,933 - INFO - Lock Aquired, Hall id: A, start: 2024-08-09 08:00:00, end: 2024-08-09 11:00:00
+2024-08-14 15:42:20,934 - INFO - Lock request received, Hall id: A, start: 2024-09-09T16:00, end: 2024-09-09T17:00
+2024-08-14 15:42:20,934 - INFO - Waiting for lock, Hall id: A, start: 2024-09-09 16:00:00, end: 2024-09-09 17:00:00
+2024-08-14 15:42:20,934 - INFO - Lock Released, Hall id: A, start: 2024-08-09 06:00:00, end: 2024-08-09 07:00:00
+2024-08-14 15:42:20,934 - INFO - Lock Released, Hall id: A, start: 2024-09-09 16:00:00, end: 2024-09-09 17:00:00
+2024-08-14 15:42:20,934 - ERROR - Lock wait timeout, Hall id: A, start: 2024-09-09 16:00:00, end: 2024-09-09 17:00:00
+2024-08-14 15:42:20,934 - INFO - Lock Aquired, Hall id: A, start: 2024-09-09 16:00:00, end: 2024-09-09 17:00:00
+2024-08-14 15:42:20,935 - INFO - Lock Released, Hall id: A, start: 2024-08-09 08:00:00, end: 2024-08-09 11:00:00
+2024-08-14 15:42:20,935 - INFO - Lock Released, Hall id: A, start: 2024-09-09 16:00:00, end: 2024-09-09 17:00:00
+2024-08-14 16:06:13,789 - INFO - Lock request received, Hall id: A, start: 2024-08-09T06:00, end: 2024-08-09T07:00
+2024-08-14 16:06:13,789 - INFO - Lock Aquired, Hall id: A, start: 2024-08-09 06:00:00, end: 2024-08-09 07:00:00
+2024-08-14 16:06:13,789 - INFO - Lock request received, Hall id: A, start: 2024-08-09T08:00, end: 2024-08-09T11:00
+2024-08-14 16:06:13,789 - INFO - Lock Aquired, Hall id: A, start: 2024-08-09 08:00:00, end: 2024-08-09 11:00:00
+2024-08-14 16:06:13,790 - INFO - Lock request received, Hall id: A, start: 2024-08-09T12:00, end: 2024-08-09T13:00
+2024-08-14 16:06:13,790 - INFO - Lock Aquired, Hall id: A, start: 2024-08-09 12:00:00, end: 2024-08-09 13:00:00
+2024-08-14 16:06:13,790 - INFO - Lock request received, Hall id: A, start: 2024-08-09T16:00, end: 2024-08-09T17:00
+2024-08-14 16:06:13,790 - INFO - Lock Aquired, Hall id: A, start: 2024-08-09 16:00:00, end: 2024-08-09 17:00:00
+2024-08-14 16:06:13,792 - INFO - Lock Released, Hall id: A, start: 2024-08-09 06:00:00, end: 2024-08-09 07:00:00
+2024-08-14 16:06:13,793 - INFO - Lock Released, Hall id: A, start: 2024-08-09 12:00:00, end: 2024-08-09 13:00:00
+2024-08-14 16:06:13,793 - INFO - Lock Released, Hall id: A, start: 2024-08-09 08:00:00, end: 2024-08-09 11:00:00
+2024-08-14 16:06:13,794 - INFO - Lock Released, Hall id: A, start: 2024-08-09 16:00:00, end: 2024-08-09 17:00:00
+2024-08-14 16:06:13,794 - INFO - Lock request received, Hall id: F, start: 2024-08-10T14:00, end: 2024-08-10T15:00
+2024-08-14 16:06:13,795 - INFO - Lock Aquired, Hall id: F, start: 2024-08-10 14:00:00, end: 2024-08-10 15:00:00
+2024-08-14 16:06:13,795 - INFO - Lock request received, Hall id: F, start: 2024-08-10T14:00, end: 2024-08-10T15:00
+2024-08-14 16:06:13,795 - INFO - Lock request received, Hall id: F, start: 2024-08-10T14:00, end: 2024-08-10T15:00
+2024-08-14 16:06:13,795 - INFO - Waiting for lock, Hall id: F, start: 2024-08-10 14:00:00, end: 2024-08-10 15:00:00
+2024-08-14 16:06:13,795 - INFO - Lock request received, Hall id: B, start: 2024-08-10T14:30, end: 2024-08-10T15:30
+2024-08-14 16:06:13,795 - INFO - Waiting for lock, Hall id: F, start: 2024-08-10 14:00:00, end: 2024-08-10 15:00:00
+2024-08-14 16:06:13,795 - INFO - Lock Aquired, Hall id: B, start: 2024-08-10 14:30:00, end: 2024-08-10 15:30:00
+2024-08-14 16:06:13,795 - INFO - Lock request received, Hall id: B, start: 2024-08-10T14:30, end: 2024-08-10T15:30
+2024-08-14 16:06:13,796 - INFO - Lock request received, Hall id: B, start: 2024-08-10T14:30, end: 2024-08-10T15:30
+2024-08-14 16:06:13,796 - INFO - Waiting for lock, Hall id: B, start: 2024-08-10 14:30:00, end: 2024-08-10 15:30:00
+2024-08-14 16:06:13,797 - INFO - Waiting for lock, Hall id: B, start: 2024-08-10 14:30:00, end: 2024-08-10 15:30:00
+2024-08-14 16:06:13,797 - INFO - Lock Released, Hall id: F, start: 2024-08-10 14:00:00, end: 2024-08-10 15:00:00
+2024-08-14 16:06:13,797 - ERROR - Lock wait timeout, Hall id: F, start: 2024-08-10 14:00:00, end: 2024-08-10 15:00:00
+2024-08-14 16:06:13,797 - INFO - Lock Aquired, Hall id: F, start: 2024-08-10 14:00:00, end: 2024-08-10 15:00:00
+2024-08-14 16:06:13,797 - ERROR - Lock wait timeout, Hall id: F, start: 2024-08-10 14:00:00, end: 2024-08-10 15:00:00
+2024-08-14 16:06:13,797 - INFO - Waiting for lock, Hall id: F, start: 2024-08-10 14:00:00, end: 2024-08-10 15:00:00
+2024-08-14 16:06:13,797 - INFO - Lock Released, Hall id: B, start: 2024-08-10 14:30:00, end: 2024-08-10 15:30:00
+2024-08-14 16:06:13,797 - ERROR - Lock wait timeout, Hall id: B, start: 2024-08-10 14:30:00, end: 2024-08-10 15:30:00
+2024-08-14 16:06:13,797 - INFO - Lock Aquired, Hall id: B, start: 2024-08-10 14:30:00, end: 2024-08-10 15:30:00
+2024-08-14 16:06:13,798 - INFO - Lock Released, Hall id: F, start: 2024-08-10 14:00:00, end: 2024-08-10 15:00:00
+2024-08-14 16:06:13,798 - ERROR - Lock wait timeout, Hall id: B, start: 2024-08-10 14:30:00, end: 2024-08-10 15:30:00
+2024-08-14 16:06:13,798 - ERROR - Lock wait timeout, Hall id: F, start: 2024-08-10 14:00:00, end: 2024-08-10 15:00:00
+2024-08-14 16:06:13,798 - INFO - Waiting for lock, Hall id: B, start: 2024-08-10 14:30:00, end: 2024-08-10 15:30:00
+2024-08-14 16:06:13,798 - INFO - Lock Aquired, Hall id: F, start: 2024-08-10 14:00:00, end: 2024-08-10 15:00:00
+2024-08-14 16:06:13,798 - INFO - Lock Released, Hall id: B, start: 2024-08-10 14:30:00, end: 2024-08-10 15:30:00
+2024-08-14 16:06:13,798 - ERROR - Lock wait timeout, Hall id: B, start: 2024-08-10 14:30:00, end: 2024-08-10 15:30:00
+2024-08-14 16:06:13,798 - INFO - Lock Aquired, Hall id: B, start: 2024-08-10 14:30:00, end: 2024-08-10 15:30:00
+2024-08-14 16:06:13,799 - INFO - Lock Released, Hall id: F, start: 2024-08-10 14:00:00, end: 2024-08-10 15:00:00
+2024-08-14 16:06:13,799 - INFO - Lock Released, Hall id: B, start: 2024-08-10 14:30:00, end: 2024-08-10 15:30:00
+2024-08-14 16:06:13,800 - INFO - Lock request received, Hall id: A, start: 2024-08-09T06:00, end: 2024-08-09T07:00
+2024-08-14 16:06:13,800 - INFO - Lock Aquired, Hall id: A, start: 2024-08-09 06:00:00, end: 2024-08-09 07:00:00
+2024-08-14 16:06:13,800 - INFO - Lock request received, Hall id: A, start: 2024-09-09T16:00, end: 2024-09-09T17:00
+2024-08-14 16:06:13,800 - INFO - Lock Aquired, Hall id: A, start: 2024-09-09 16:00:00, end: 2024-09-09 17:00:00
+2024-08-14 16:06:13,800 - INFO - Lock request received, Hall id: A, start: 2024-08-09T12:00, end: 2024-08-09T13:00
+2024-08-14 16:06:13,800 - INFO - Lock Aquired, Hall id: A, start: 2024-08-09 12:00:00, end: 2024-08-09 13:00:00
+2024-08-14 16:06:13,800 - INFO - Lock request received, Hall id: A, start: 2024-09-09T16:00, end: 2024-09-09T17:00
+2024-08-14 16:06:13,800 - INFO - Waiting for lock, Hall id: A, start: 2024-09-09 16:00:00, end: 2024-09-09 17:00:00
+2024-08-14 16:06:13,801 - INFO - Lock Released, Hall id: A, start: 2024-08-09 06:00:00, end: 2024-08-09 07:00:00
+2024-08-14 16:06:13,801 - INFO - Lock Released, Hall id: A, start: 2024-09-09 16:00:00, end: 2024-09-09 17:00:00
+2024-08-14 16:06:13,801 - ERROR - Lock wait timeout, Hall id: A, start: 2024-09-09 16:00:00, end: 2024-09-09 17:00:00
+2024-08-14 16:06:13,801 - INFO - Lock Aquired, Hall id: A, start: 2024-09-09 16:00:00, end: 2024-09-09 17:00:00
+2024-08-14 16:06:13,801 - INFO - Lock Released, Hall id: A, start: 2024-08-09 12:00:00, end: 2024-08-09 13:00:00
+2024-08-14 16:06:13,801 - INFO - Lock Released, Hall id: A, start: 2024-09-09 16:00:00, end: 2024-09-09 17:00:00
+2024-08-14 16:06:18,045 - INFO - Lock request received, Hall id: F, start: 2024-08-01T10:00:00, end: 2024-08-02T12:00:00
+2024-08-14 16:06:18,045 - INFO - Lock Aquired, Hall id: F, start: 2024-08-01 10:00:00, end: 2024-08-02 12:00:00
+2024-08-14 16:06:18,046 - INFO - Lock Released, Hall id: F, start: 2024-08-01 10:00:00, end: 2024-08-02 12:00:00
+2024-08-14 16:06:18,046 - INFO - Lock request received, Hall id: B, start: 2024-08-01T10:00:00, end: 2024-08-01T12:00:00
+2024-08-14 16:06:18,046 - INFO - Lock Aquired, Hall id: B, start: 2024-08-01 10:00:00, end: 2024-08-01 12:00:00
+2024-08-14 16:06:18,047 - INFO - Lock Released, Hall id: B, start: 2024-08-01 10:00:00, end: 2024-08-01 12:00:00
+2024-08-14 16:06:18,048 - INFO - Lock request received, Hall id: E, start: 2024-09-01T13:00:00, end: 2024-09-01T15:00:00
+2024-08-14 16:06:18,048 - INFO - Lock Aquired, Hall id: E, start: 2024-09-01 13:00:00, end: 2024-09-01 15:00:00
+2024-08-14 16:06:18,049 - INFO - Lock Released, Hall id: E, start: 2024-09-01 13:00:00, end: 2024-09-01 15:00:00
+2024-08-14 16:06:18,049 - INFO - Lock request received, Hall id: C, start: 2024-08-01T16:00:00, end: 2024-08-01T18:00:00
+2024-08-14 16:06:18,049 - INFO - Lock Aquired, Hall id: C, start: 2024-08-01 16:00:00, end: 2024-08-01 18:00:00
+2024-08-14 16:06:18,050 - INFO - Lock Released, Hall id: C, start: 2024-08-01 16:00:00, end: 2024-08-01 18:00:00
+2024-08-14 16:06:18,051 - INFO - Lock request received, Hall id: F, start: 2024-08-01T10:00:00, end: 2024-08-02T12:00:00
+2024-08-14 16:06:18,051 - INFO - Lock Aquired, Hall id: F, start: 2024-08-01 10:00:00, end: 2024-08-02 12:00:00
+2024-08-14 16:06:18,051 - INFO - Lock request received, Hall id: F, start: 2024-08-03T14:00:00, end: 2025-08-04T16:00:00
+2024-08-14 16:06:18,051 - INFO - Lock Aquired, Hall id: F, start: 2024-08-03 14:00:00, end: 2025-08-04 16:00:00
+2024-08-14 16:06:18,052 - INFO - Lock Released, Hall id: F, start: 2024-08-01 10:00:00, end: 2024-08-02 12:00:00
+2024-08-14 16:06:18,052 - INFO - Lock Released, Hall id: F, start: 2024-08-03 14:00:00, end: 2025-08-04 16:00:00
+2024-08-14 16:06:18,053 - INFO - Lock request received, Hall id: F, start: 2024-08-03T14:00:00, end: 2025-08-04T16:00:00
+2024-08-14 16:06:18,053 - INFO - Lock Aquired, Hall id: F, start: 2024-08-03 14:00:00, end: 2025-08-04 16:00:00
+2024-08-14 16:06:18,053 - INFO - Lock Released, Hall id: F, start: 2024-08-03 14:00:00, end: 2025-08-04 16:00:00
+2024-08-14 16:07:05,242 - INFO - Lock request received, Hall id: F, start: 2024-07-15T10:00:00, end: 2024-07-15T12:00:00
+2024-08-14 16:07:05,242 - INFO - Lock Aquired, Hall id: F, start: 2024-07-15 10:00:00, end: 2024-07-15 12:00:00
+2024-08-14 16:07:05,244 - INFO - Lock Released, Hall id: F, start: 2024-07-15 10:00:00, end: 2024-07-15 12:00:00
+2024-08-14 16:07:13,756 - INFO - Lock request received, Hall id: B, start: 2024-08-01T10:00:00, end: 2024-08-01T12:00:00
+2024-08-14 16:07:13,756 - INFO - Lock Aquired, Hall id: B, start: 2024-08-01 10:00:00, end: 2024-08-01 12:00:00
+2024-08-14 16:07:13,757 - INFO - Lock Released, Hall id: B, start: 2024-08-01 10:00:00, end: 2024-08-01 12:00:00
+2024-08-14 16:07:13,758 - INFO - Lock request received, Hall id: E, start: 2024-01-01T13:00:00, end: 2024-09-01T15:00:00
+2024-08-14 16:07:13,758 - INFO - Lock Aquired, Hall id: E, start: 2024-01-01 13:00:00, end: 2024-09-01 15:00:00
+2024-08-14 16:07:13,759 - INFO - Lock Released, Hall id: E, start: 2024-01-01 13:00:00, end: 2024-09-01 15:00:00
+2024-08-14 16:07:13,759 - INFO - Lock request received, Hall id: C, start: 2024-08-01T16:00:00, end: 2024-08-01T18:00:00
+2024-08-14 16:07:13,759 - INFO - Lock Aquired, Hall id: C, start: 2024-08-01 16:00:00, end: 2024-08-01 18:00:00
+2024-08-14 16:07:13,760 - INFO - Lock Released, Hall id: C, start: 2024-08-01 16:00:00, end: 2024-08-01 18:00:00
+2024-08-14 16:19:47,570 - INFO - Lock request received, Hall id: F, start: 2024-08-01T10:00:00, end: 2024-08-02T12:00:00
+2024-08-14 16:19:47,570 - INFO - Lock Aquired, Hall id: F, start: 2024-08-01 10:00:00, end: 2024-08-02 12:00:00
+2024-08-14 16:19:47,571 - INFO - Lock Released, Hall id: F, start: 2024-08-01 10:00:00, end: 2024-08-02 12:00:00
+2024-08-14 16:19:47,571 - INFO - Lock request received, Hall id: B, start: 2024-08-01T10:00:00, end: 2024-08-01T12:00:00
+2024-08-14 16:19:47,572 - INFO - Lock Aquired, Hall id: B, start: 2024-08-01 10:00:00, end: 2024-08-01 12:00:00
+2024-08-14 16:19:47,573 - INFO - Lock Released, Hall id: B, start: 2024-08-01 10:00:00, end: 2024-08-01 12:00:00
+2024-08-14 16:19:47,573 - INFO - Lock request received, Hall id: E, start: 2024-09-01T13:00:00, end: 2024-09-01T15:00:00
+2024-08-14 16:19:47,573 - INFO - Lock Aquired, Hall id: E, start: 2024-09-01 13:00:00, end: 2024-09-01 15:00:00
+2024-08-14 16:19:47,574 - INFO - Lock Released, Hall id: E, start: 2024-09-01 13:00:00, end: 2024-09-01 15:00:00
+2024-08-14 16:19:47,574 - INFO - Lock request received, Hall id: C, start: 2024-08-01T16:00:00, end: 2024-08-01T18:00:00
+2024-08-14 16:19:47,574 - INFO - Lock Aquired, Hall id: C, start: 2024-08-01 16:00:00, end: 2024-08-01 18:00:00
+2024-08-14 16:19:47,576 - INFO - Lock Released, Hall id: C, start: 2024-08-01 16:00:00, end: 2024-08-01 18:00:00
+2024-08-14 16:19:47,577 - INFO - Lock request received, Hall id: F, start: 2024-08-01T10:00:00, end: 2024-08-02T12:00:00
+2024-08-14 16:19:47,577 - INFO - Lock Aquired, Hall id: F, start: 2024-08-01 10:00:00, end: 2024-08-02 12:00:00
+2024-08-14 16:19:47,577 - INFO - Lock request received, Hall id: F, start: 2024-08-03T14:00:00, end: 2025-08-04T16:00:00
+2024-08-14 16:19:47,577 - INFO - Lock Aquired, Hall id: F, start: 2024-08-03 14:00:00, end: 2025-08-04 16:00:00
+2024-08-14 16:19:47,578 - INFO - Lock Released, Hall id: F, start: 2024-08-01 10:00:00, end: 2024-08-02 12:00:00
+2024-08-14 16:19:47,578 - INFO - Lock Released, Hall id: F, start: 2024-08-03 14:00:00, end: 2025-08-04 16:00:00
+2024-08-14 16:19:47,578 - INFO - Lock request received, Hall id: F, start: 2024-08-03T14:00:00, end: 2025-08-04T16:00:00
+2024-08-14 16:19:47,578 - INFO - Lock Aquired, Hall id: F, start: 2024-08-03 14:00:00, end: 2025-08-04 16:00:00
+2024-08-14 16:19:47,579 - INFO - Lock Released, Hall id: F, start: 2024-08-03 14:00:00, end: 2025-08-04 16:00:00
+2024-08-14 16:19:53,354 - INFO - Lock request received, Hall id: A, start: 2024-08-09T06:00, end: 2024-08-09T07:00
+2024-08-14 16:19:53,354 - INFO - Lock request received, Hall id: A, start: 2024-08-09T08:00, end: 2024-08-09T11:00
+2024-08-14 16:19:53,354 - INFO - Lock Aquired, Hall id: A, start: 2024-08-09 06:00:00, end: 2024-08-09 07:00:00
+2024-08-14 16:19:53,354 - INFO - Lock Aquired, Hall id: A, start: 2024-08-09 08:00:00, end: 2024-08-09 11:00:00
+2024-08-14 16:19:53,354 - INFO - Lock request received, Hall id: A, start: 2024-08-09T12:00, end: 2024-08-09T13:00
+2024-08-14 16:19:53,355 - INFO - Lock request received, Hall id: A, start: 2024-08-09T16:00, end: 2024-08-09T17:00
+2024-08-14 16:19:53,355 - INFO - Lock Aquired, Hall id: A, start: 2024-08-09 12:00:00, end: 2024-08-09 13:00:00
+2024-08-14 16:19:53,356 - INFO - Lock Aquired, Hall id: A, start: 2024-08-09 16:00:00, end: 2024-08-09 17:00:00
+2024-08-14 16:19:53,357 - INFO - Lock Released, Hall id: A, start: 2024-08-09 06:00:00, end: 2024-08-09 07:00:00
+2024-08-14 16:19:53,359 - INFO - Lock Released, Hall id: A, start: 2024-08-09 16:00:00, end: 2024-08-09 17:00:00
+2024-08-14 16:19:53,360 - INFO - Lock Released, Hall id: A, start: 2024-08-09 08:00:00, end: 2024-08-09 11:00:00
+2024-08-14 16:19:53,360 - INFO - Lock Released, Hall id: A, start: 2024-08-09 12:00:00, end: 2024-08-09 13:00:00
+2024-08-14 16:19:53,361 - INFO - Lock request received, Hall id: F, start: 2024-08-10T14:00, end: 2024-08-10T15:00
+2024-08-14 16:19:53,361 - INFO - Lock Aquired, Hall id: F, start: 2024-08-10 14:00:00, end: 2024-08-10 15:00:00
+2024-08-14 16:19:53,361 - INFO - Lock request received, Hall id: F, start: 2024-08-10T14:00, end: 2024-08-10T15:00
+2024-08-14 16:19:53,361 - INFO - Lock request received, Hall id: F, start: 2024-08-10T14:00, end: 2024-08-10T15:00
+2024-08-14 16:19:53,361 - INFO - Waiting for lock, Hall id: F, start: 2024-08-10 14:00:00, end: 2024-08-10 15:00:00
+2024-08-14 16:19:53,361 - INFO - Lock request received, Hall id: B, start: 2024-08-10T14:30, end: 2024-08-10T15:30
+2024-08-14 16:19:53,361 - INFO - Waiting for lock, Hall id: F, start: 2024-08-10 14:00:00, end: 2024-08-10 15:00:00
+2024-08-14 16:19:53,362 - INFO - Lock Aquired, Hall id: B, start: 2024-08-10 14:30:00, end: 2024-08-10 15:30:00
+2024-08-14 16:19:53,362 - INFO - Lock request received, Hall id: B, start: 2024-08-10T14:30, end: 2024-08-10T15:30
+2024-08-14 16:19:53,362 - INFO - Lock request received, Hall id: B, start: 2024-08-10T14:30, end: 2024-08-10T15:30
+2024-08-14 16:19:53,362 - INFO - Waiting for lock, Hall id: B, start: 2024-08-10 14:30:00, end: 2024-08-10 15:30:00
+2024-08-14 16:19:53,363 - INFO - Waiting for lock, Hall id: B, start: 2024-08-10 14:30:00, end: 2024-08-10 15:30:00
+2024-08-14 16:19:53,364 - INFO - Lock Released, Hall id: F, start: 2024-08-10 14:00:00, end: 2024-08-10 15:00:00
+2024-08-14 16:19:53,364 - INFO - Lock Released, Hall id: B, start: 2024-08-10 14:30:00, end: 2024-08-10 15:30:00
+2024-08-14 16:19:53,364 - ERROR - Lock wait timeout, Hall id: F, start: 2024-08-10 14:00:00, end: 2024-08-10 15:00:00
+2024-08-14 16:19:53,364 - ERROR - Lock wait timeout, Hall id: B, start: 2024-08-10 14:30:00, end: 2024-08-10 15:30:00
+2024-08-14 16:19:53,364 - INFO - Lock Aquired, Hall id: F, start: 2024-08-10 14:00:00, end: 2024-08-10 15:00:00
+2024-08-14 16:19:53,364 - INFO - Lock Aquired, Hall id: B, start: 2024-08-10 14:30:00, end: 2024-08-10 15:30:00
+2024-08-14 16:19:53,364 - ERROR - Lock wait timeout, Hall id: F, start: 2024-08-10 14:00:00, end: 2024-08-10 15:00:00
+2024-08-14 16:19:53,364 - ERROR - Lock wait timeout, Hall id: B, start: 2024-08-10 14:30:00, end: 2024-08-10 15:30:00
+2024-08-14 16:19:53,365 - INFO - Waiting for lock, Hall id: F, start: 2024-08-10 14:00:00, end: 2024-08-10 15:00:00
+2024-08-14 16:19:53,365 - INFO - Lock Released, Hall id: F, start: 2024-08-10 14:00:00, end: 2024-08-10 15:00:00
+2024-08-14 16:19:53,365 - INFO - Waiting for lock, Hall id: B, start: 2024-08-10 14:30:00, end: 2024-08-10 15:30:00
+2024-08-14 16:19:53,365 - INFO - Lock Released, Hall id: B, start: 2024-08-10 14:30:00, end: 2024-08-10 15:30:00
+2024-08-14 16:19:53,365 - ERROR - Lock wait timeout, Hall id: F, start: 2024-08-10 14:00:00, end: 2024-08-10 15:00:00
+2024-08-14 16:19:53,366 - ERROR - Lock wait timeout, Hall id: B, start: 2024-08-10 14:30:00, end: 2024-08-10 15:30:00
+2024-08-14 16:19:53,366 - INFO - Lock Aquired, Hall id: F, start: 2024-08-10 14:00:00, end: 2024-08-10 15:00:00
+2024-08-14 16:19:53,366 - INFO - Lock Aquired, Hall id: B, start: 2024-08-10 14:30:00, end: 2024-08-10 15:30:00
+2024-08-14 16:19:53,367 - INFO - Lock Released, Hall id: F, start: 2024-08-10 14:00:00, end: 2024-08-10 15:00:00
+2024-08-14 16:19:53,367 - INFO - Lock Released, Hall id: B, start: 2024-08-10 14:30:00, end: 2024-08-10 15:30:00
+2024-08-14 16:19:53,368 - INFO - Lock request received, Hall id: A, start: 2024-08-09T06:00, end: 2024-08-09T07:00
+2024-08-14 16:19:53,368 - INFO - Lock Aquired, Hall id: A, start: 2024-08-09 06:00:00, end: 2024-08-09 07:00:00
+2024-08-14 16:19:53,368 - INFO - Lock request received, Hall id: A, start: 2024-09-09T16:00, end: 2024-09-09T17:00
+2024-08-14 16:19:53,369 - INFO - Lock request received, Hall id: A, start: 2024-08-09T16:00, end: 2024-08-09T17:00
+2024-08-14 16:19:53,369 - INFO - Lock Aquired, Hall id: A, start: 2024-09-09 16:00:00, end: 2024-09-09 17:00:00
+2024-08-14 16:19:53,369 - INFO - Lock Aquired, Hall id: A, start: 2024-08-09 16:00:00, end: 2024-08-09 17:00:00
+2024-08-14 16:19:53,369 - INFO - Lock request received, Hall id: A, start: 2024-09-09T16:00, end: 2024-09-09T17:00
+2024-08-14 16:19:53,369 - INFO - Waiting for lock, Hall id: A, start: 2024-09-09 16:00:00, end: 2024-09-09 17:00:00
+2024-08-14 16:19:53,370 - INFO - Lock Released, Hall id: A, start: 2024-08-09 06:00:00, end: 2024-08-09 07:00:00
+2024-08-14 16:19:53,370 - INFO - Lock Released, Hall id: A, start: 2024-09-09 16:00:00, end: 2024-09-09 17:00:00
+2024-08-14 16:19:53,370 - ERROR - Lock wait timeout, Hall id: A, start: 2024-09-09 16:00:00, end: 2024-09-09 17:00:00
+2024-08-14 16:19:53,370 - INFO - Lock Aquired, Hall id: A, start: 2024-09-09 16:00:00, end: 2024-09-09 17:00:00
+2024-08-14 16:19:53,371 - INFO - Lock Released, Hall id: A, start: 2024-08-09 16:00:00, end: 2024-08-09 17:00:00
+2024-08-14 16:19:53,371 - INFO - Lock Released, Hall id: A, start: 2024-09-09 16:00:00, end: 2024-09-09 17:00:00
+2024-08-14 16:51:43,161 - INFO - Lock request received, Hall id: A, start: 2024-08-09T06:00, end: 2024-08-09T07:00
+2024-08-14 16:51:43,161 - INFO - Lock Aquired, Hall id: A, start: 2024-08-09 06:00:00, end: 2024-08-09 07:00:00
+2024-08-14 16:51:43,161 - INFO - Lock request received, Hall id: A, start: 2024-08-09T08:00, end: 2024-08-09T11:00
+2024-08-14 16:51:43,162 - INFO - Lock Aquired, Hall id: A, start: 2024-08-09 08:00:00, end: 2024-08-09 11:00:00
+2024-08-14 16:51:43,162 - INFO - Lock request received, Hall id: A, start: 2024-08-09T12:00, end: 2024-08-09T13:00
+2024-08-14 16:51:43,162 - INFO - Lock Aquired, Hall id: A, start: 2024-08-09 12:00:00, end: 2024-08-09 13:00:00
+2024-08-14 16:51:43,162 - INFO - Lock request received, Hall id: A, start: 2024-08-09T16:00, end: 2024-08-09T17:00
+2024-08-14 16:51:43,163 - INFO - Lock Aquired, Hall id: A, start: 2024-08-09 16:00:00, end: 2024-08-09 17:00:00
+2024-08-14 16:51:43,163 - INFO - Lock Released, Hall id: A, start: 2024-08-09 06:00:00, end: 2024-08-09 07:00:00
+2024-08-14 16:51:43,165 - INFO - Lock Released, Hall id: A, start: 2024-08-09 08:00:00, end: 2024-08-09 11:00:00
+2024-08-14 16:51:43,165 - INFO - Lock Released, Hall id: A, start: 2024-08-09 16:00:00, end: 2024-08-09 17:00:00
+2024-08-14 16:51:43,166 - INFO - Lock Released, Hall id: A, start: 2024-08-09 12:00:00, end: 2024-08-09 13:00:00
+2024-08-14 16:51:43,166 - INFO - Lock request received, Hall id: F, start: 2024-08-10T14:00, end: 2024-08-10T15:00
+2024-08-14 16:51:43,166 - INFO - Lock Aquired, Hall id: F, start: 2024-08-10 14:00:00, end: 2024-08-10 15:00:00
+2024-08-14 16:51:43,166 - INFO - Lock request received, Hall id: F, start: 2024-08-10T14:00, end: 2024-08-10T15:00
+2024-08-14 16:51:43,167 - INFO - Waiting for lock, Hall id: F, start: 2024-08-10 14:00:00, end: 2024-08-10 15:00:00
+2024-08-14 16:51:43,167 - INFO - Lock request received, Hall id: F, start: 2024-08-10T14:00, end: 2024-08-10T15:00
+2024-08-14 16:51:43,167 - INFO - Waiting for lock, Hall id: F, start: 2024-08-10 14:00:00, end: 2024-08-10 15:00:00
+2024-08-14 16:51:43,167 - INFO - Lock request received, Hall id: B, start: 2024-08-10T14:30, end: 2024-08-10T15:30
+2024-08-14 16:51:43,168 - INFO - Lock request received, Hall id: B, start: 2024-08-10T14:30, end: 2024-08-10T15:30
+2024-08-14 16:51:43,168 - INFO - Lock Aquired, Hall id: B, start: 2024-08-10 14:30:00, end: 2024-08-10 15:30:00
+2024-08-14 16:51:43,168 - INFO - Lock request received, Hall id: B, start: 2024-08-10T14:30, end: 2024-08-10T15:30
+2024-08-14 16:51:43,168 - INFO - Waiting for lock, Hall id: B, start: 2024-08-10 14:30:00, end: 2024-08-10 15:30:00
+2024-08-14 16:51:43,169 - INFO - Waiting for lock, Hall id: B, start: 2024-08-10 14:30:00, end: 2024-08-10 15:30:00
+2024-08-14 16:51:43,169 - INFO - Lock Released, Hall id: F, start: 2024-08-10 14:00:00, end: 2024-08-10 15:00:00
+2024-08-14 16:51:43,169 - ERROR - Lock wait timeout, Hall id: F, start: 2024-08-10 14:00:00, end: 2024-08-10 15:00:00
+2024-08-14 16:51:43,169 - INFO - Lock Aquired, Hall id: F, start: 2024-08-10 14:00:00, end: 2024-08-10 15:00:00
+2024-08-14 16:51:43,170 - ERROR - Lock wait timeout, Hall id: F, start: 2024-08-10 14:00:00, end: 2024-08-10 15:00:00
+2024-08-14 16:51:43,170 - INFO - Waiting for lock, Hall id: F, start: 2024-08-10 14:00:00, end: 2024-08-10 15:00:00
+2024-08-14 16:51:43,170 - INFO - Lock Released, Hall id: B, start: 2024-08-10 14:30:00, end: 2024-08-10 15:30:00
+2024-08-14 16:51:43,170 - INFO - Lock Released, Hall id: F, start: 2024-08-10 14:00:00, end: 2024-08-10 15:00:00
+2024-08-14 16:51:43,171 - ERROR - Lock wait timeout, Hall id: B, start: 2024-08-10 14:30:00, end: 2024-08-10 15:30:00
+2024-08-14 16:51:43,171 - ERROR - Lock wait timeout, Hall id: F, start: 2024-08-10 14:00:00, end: 2024-08-10 15:00:00
+2024-08-14 16:51:43,171 - INFO - Lock Aquired, Hall id: B, start: 2024-08-10 14:30:00, end: 2024-08-10 15:30:00
+2024-08-14 16:51:43,171 - INFO - Lock Aquired, Hall id: F, start: 2024-08-10 14:00:00, end: 2024-08-10 15:00:00
+2024-08-14 16:51:43,171 - ERROR - Lock wait timeout, Hall id: B, start: 2024-08-10 14:30:00, end: 2024-08-10 15:30:00
+2024-08-14 16:51:43,171 - INFO - Waiting for lock, Hall id: B, start: 2024-08-10 14:30:00, end: 2024-08-10 15:30:00
+2024-08-14 16:51:43,171 - INFO - Lock Released, Hall id: B, start: 2024-08-10 14:30:00, end: 2024-08-10 15:30:00
+2024-08-14 16:51:43,172 - ERROR - Lock wait timeout, Hall id: B, start: 2024-08-10 14:30:00, end: 2024-08-10 15:30:00
+2024-08-14 16:51:43,172 - INFO - Lock Aquired, Hall id: B, start: 2024-08-10 14:30:00, end: 2024-08-10 15:30:00
+2024-08-14 16:51:43,172 - INFO - Lock Released, Hall id: F, start: 2024-08-10 14:00:00, end: 2024-08-10 15:00:00
+2024-08-14 16:51:43,172 - INFO - Lock Released, Hall id: B, start: 2024-08-10 14:30:00, end: 2024-08-10 15:30:00
+2024-08-14 16:51:43,173 - INFO - Lock request received, Hall id: A, start: 2024-08-09T06:00, end: 2024-08-09T07:00
+2024-08-14 16:51:43,173 - INFO - Lock Aquired, Hall id: A, start: 2024-08-09 06:00:00, end: 2024-08-09 07:00:00
+2024-08-14 16:51:43,174 - INFO - Lock request received, Hall id: A, start: 2024-09-09T16:00, end: 2024-09-09T17:00
+2024-08-14 16:51:43,174 - INFO - Lock request received, Hall id: A, start: 2024-08-09T08:00, end: 2024-08-09T11:00
+2024-08-14 16:51:43,174 - INFO - Lock Aquired, Hall id: A, start: 2024-09-09 16:00:00, end: 2024-09-09 17:00:00
+2024-08-14 16:51:43,174 - INFO - Lock Aquired, Hall id: A, start: 2024-08-09 08:00:00, end: 2024-08-09 11:00:00
+2024-08-14 16:51:43,174 - INFO - Lock request received, Hall id: A, start: 2024-09-09T16:00, end: 2024-09-09T17:00
+2024-08-14 16:51:43,174 - INFO - Waiting for lock, Hall id: A, start: 2024-09-09 16:00:00, end: 2024-09-09 17:00:00
+2024-08-14 16:51:43,175 - INFO - Lock Released, Hall id: A, start: 2024-08-09 06:00:00, end: 2024-08-09 07:00:00
+2024-08-14 16:51:43,175 - INFO - Lock Released, Hall id: A, start: 2024-09-09 16:00:00, end: 2024-09-09 17:00:00
+2024-08-14 16:51:43,175 - ERROR - Lock wait timeout, Hall id: A, start: 2024-09-09 16:00:00, end: 2024-09-09 17:00:00
+2024-08-14 16:51:43,175 - INFO - Lock Aquired, Hall id: A, start: 2024-09-09 16:00:00, end: 2024-09-09 17:00:00
+2024-08-14 16:51:43,176 - INFO - Lock Released, Hall id: A, start: 2024-08-09 08:00:00, end: 2024-08-09 11:00:00
+2024-08-14 16:51:43,176 - INFO - Lock Released, Hall id: A, start: 2024-09-09 16:00:00, end: 2024-09-09 17:00:00
+2024-08-16 10:56:34,748 - INFO - Lock request received, Hall id: A, start: 2024-08-09T06:00, end: 2024-08-09T07:00
+2024-08-16 10:56:34,749 - INFO - Lock request received, Hall id: A, start: 2024-08-09T08:00, end: 2024-08-09T11:00
+2024-08-16 10:56:34,749 - INFO - Lock request received, Hall id: A, start: 2024-08-09T12:00, end: 2024-08-09T13:00
+2024-08-16 10:56:34,749 - INFO - Lock request received, Hall id: A, start: 2024-08-09T16:00, end: 2024-08-09T17:00
+2024-08-16 10:56:34,749 - INFO - Lock Aquired, Hall id: A, start: 2024-08-09 16:00:00, end: 2024-08-09 17:00:00
+2024-08-16 10:56:34,749 - INFO - Lock Aquired, Hall id: A, start: 2024-08-09 08:00:00, end: 2024-08-09 11:00:00
+2024-08-16 10:56:34,749 - INFO - Lock Aquired, Hall id: A, start: 2024-08-09 12:00:00, end: 2024-08-09 13:00:00
+2024-08-16 10:56:34,749 - INFO - Lock Aquired, Hall id: A, start: 2024-08-09 06:00:00, end: 2024-08-09 07:00:00
+2024-08-16 10:56:34,752 - INFO - Lock Released, Hall id: A, start: 2024-08-09 08:00:00, end: 2024-08-09 11:00:00
+2024-08-16 10:56:34,752 - INFO - Lock Released, Hall id: A, start: 2024-08-09 16:00:00, end: 2024-08-09 17:00:00
+2024-08-16 10:56:34,753 - INFO - Lock Released, Hall id: A, start: 2024-08-09 12:00:00, end: 2024-08-09 13:00:00
+2024-08-16 10:56:34,753 - INFO - Lock Released, Hall id: A, start: 2024-08-09 06:00:00, end: 2024-08-09 07:00:00
+2024-08-16 10:56:34,754 - INFO - Lock request received, Hall id: F, start: 2024-08-10T14:00, end: 2024-08-10T15:00
+2024-08-16 10:56:34,754 - INFO - Lock Aquired, Hall id: F, start: 2024-08-10 14:00:00, end: 2024-08-10 15:00:00
+2024-08-16 10:56:34,754 - INFO - Lock request received, Hall id: F, start: 2024-08-10T14:00, end: 2024-08-10T15:00
+2024-08-16 10:56:34,754 - INFO - Lock request received, Hall id: F, start: 2024-08-10T14:00, end: 2024-08-10T15:00
+2024-08-16 10:56:34,754 - INFO - Waiting for lock, Hall id: F, start: 2024-08-10 14:00:00, end: 2024-08-10 15:00:00
+2024-08-16 10:56:34,754 - INFO - Lock request received, Hall id: B, start: 2024-08-10T14:30, end: 2024-08-10T15:30
+2024-08-16 10:56:34,754 - INFO - Waiting for lock, Hall id: F, start: 2024-08-10 14:00:00, end: 2024-08-10 15:00:00
+2024-08-16 10:56:34,755 - INFO - Lock Aquired, Hall id: B, start: 2024-08-10 14:30:00, end: 2024-08-10 15:30:00
+2024-08-16 10:56:34,755 - INFO - Lock request received, Hall id: B, start: 2024-08-10T14:30, end: 2024-08-10T15:30
+2024-08-16 10:56:34,755 - INFO - Lock request received, Hall id: B, start: 2024-08-10T14:30, end: 2024-08-10T15:30
+2024-08-16 10:56:34,755 - INFO - Waiting for lock, Hall id: B, start: 2024-08-10 14:30:00, end: 2024-08-10 15:30:00
+2024-08-16 10:56:34,756 - INFO - Waiting for lock, Hall id: B, start: 2024-08-10 14:30:00, end: 2024-08-10 15:30:00
+2024-08-16 10:56:34,756 - INFO - Lock Released, Hall id: F, start: 2024-08-10 14:00:00, end: 2024-08-10 15:00:00
+2024-08-16 10:56:34,756 - ERROR - Lock wait timeout, Hall id: F, start: 2024-08-10 14:00:00, end: 2024-08-10 15:00:00
+2024-08-16 10:56:34,756 - INFO - Lock Released, Hall id: B, start: 2024-08-10 14:30:00, end: 2024-08-10 15:30:00
+2024-08-16 10:56:34,756 - INFO - Lock Aquired, Hall id: F, start: 2024-08-10 14:00:00, end: 2024-08-10 15:00:00
+2024-08-16 10:56:34,756 - ERROR - Lock wait timeout, Hall id: B, start: 2024-08-10 14:30:00, end: 2024-08-10 15:30:00
+2024-08-16 10:56:34,757 - INFO - Lock Aquired, Hall id: B, start: 2024-08-10 14:30:00, end: 2024-08-10 15:30:00
+2024-08-16 10:56:34,756 - ERROR - Lock wait timeout, Hall id: F, start: 2024-08-10 14:00:00, end: 2024-08-10 15:00:00
+2024-08-16 10:56:34,757 - ERROR - Lock wait timeout, Hall id: B, start: 2024-08-10 14:30:00, end: 2024-08-10 15:30:00
+2024-08-16 10:56:34,757 - INFO - Waiting for lock, Hall id: F, start: 2024-08-10 14:00:00, end: 2024-08-10 15:00:00
+2024-08-16 10:56:34,757 - INFO - Lock Released, Hall id: F, start: 2024-08-10 14:00:00, end: 2024-08-10 15:00:00
+2024-08-16 10:56:34,757 - INFO - Waiting for lock, Hall id: B, start: 2024-08-10 14:30:00, end: 2024-08-10 15:30:00
+2024-08-16 10:56:34,757 - INFO - Lock Released, Hall id: B, start: 2024-08-10 14:30:00, end: 2024-08-10 15:30:00
+2024-08-16 10:56:34,757 - ERROR - Lock wait timeout, Hall id: F, start: 2024-08-10 14:00:00, end: 2024-08-10 15:00:00
+2024-08-16 10:56:34,757 - ERROR - Lock wait timeout, Hall id: B, start: 2024-08-10 14:30:00, end: 2024-08-10 15:30:00
+2024-08-16 10:56:34,757 - INFO - Lock Aquired, Hall id: F, start: 2024-08-10 14:00:00, end: 2024-08-10 15:00:00
+2024-08-16 10:56:34,757 - INFO - Lock Aquired, Hall id: B, start: 2024-08-10 14:30:00, end: 2024-08-10 15:30:00
+2024-08-16 10:56:34,758 - INFO - Lock Released, Hall id: F, start: 2024-08-10 14:00:00, end: 2024-08-10 15:00:00
+2024-08-16 10:56:34,758 - INFO - Lock Released, Hall id: B, start: 2024-08-10 14:30:00, end: 2024-08-10 15:30:00
+2024-08-16 10:56:34,759 - INFO - Lock request received, Hall id: A, start: 2024-08-09T08:00, end: 2024-08-09T11:00
+2024-08-16 10:56:34,759 - INFO - Lock Aquired, Hall id: A, start: 2024-08-09 08:00:00, end: 2024-08-09 11:00:00
+2024-08-16 10:56:34,759 - INFO - Lock request received, Hall id: A, start: 2024-09-09T16:00, end: 2024-09-09T17:00
+2024-08-16 10:56:34,759 - INFO - Lock Aquired, Hall id: A, start: 2024-09-09 16:00:00, end: 2024-09-09 17:00:00
+2024-08-16 10:56:34,759 - INFO - Lock request received, Hall id: A, start: 2024-08-09T16:00, end: 2024-08-09T17:00
+2024-08-16 10:56:34,759 - INFO - Lock Aquired, Hall id: A, start: 2024-08-09 16:00:00, end: 2024-08-09 17:00:00
+2024-08-16 10:56:34,759 - INFO - Lock request received, Hall id: A, start: 2024-09-09T16:00, end: 2024-09-09T17:00
+2024-08-16 10:56:34,760 - INFO - Waiting for lock, Hall id: A, start: 2024-09-09 16:00:00, end: 2024-09-09 17:00:00
+2024-08-16 10:56:34,760 - INFO - Lock Released, Hall id: A, start: 2024-08-09 08:00:00, end: 2024-08-09 11:00:00
+2024-08-16 10:56:34,760 - INFO - Lock Released, Hall id: A, start: 2024-09-09 16:00:00, end: 2024-09-09 17:00:00
+2024-08-16 10:56:34,760 - ERROR - Lock wait timeout, Hall id: A, start: 2024-09-09 16:00:00, end: 2024-09-09 17:00:00
+2024-08-16 10:56:34,760 - INFO - Lock Aquired, Hall id: A, start: 2024-09-09 16:00:00, end: 2024-09-09 17:00:00
+2024-08-16 10:56:34,761 - INFO - Lock Released, Hall id: A, start: 2024-08-09 16:00:00, end: 2024-08-09 17:00:00
+2024-08-16 10:56:34,761 - INFO - Lock Released, Hall id: A, start: 2024-09-09 16:00:00, end: 2024-09-09 17:00:00
+2024-08-16 10:56:39,201 - INFO - Lock request received, Hall id: F, start: 2024-08-01T10:00:00, end: 2024-08-02T12:00:00
+2024-08-16 10:56:39,201 - INFO - Lock Aquired, Hall id: F, start: 2024-08-01 10:00:00, end: 2024-08-02 12:00:00
+2024-08-16 10:56:39,203 - INFO - Lock Released, Hall id: F, start: 2024-08-01 10:00:00, end: 2024-08-02 12:00:00
+2024-08-16 10:56:39,203 - INFO - Lock request received, Hall id: B, start: 2024-08-01T10:00:00, end: 2024-08-01T12:00:00
+2024-08-16 10:56:39,203 - INFO - Lock Aquired, Hall id: B, start: 2024-08-01 10:00:00, end: 2024-08-01 12:00:00
+2024-08-16 10:56:39,204 - INFO - Lock Released, Hall id: B, start: 2024-08-01 10:00:00, end: 2024-08-01 12:00:00
+2024-08-16 10:56:39,204 - INFO - Lock request received, Hall id: E, start: 2024-09-01T13:00:00, end: 2024-09-01T15:00:00
+2024-08-16 10:56:39,204 - INFO - Lock Aquired, Hall id: E, start: 2024-09-01 13:00:00, end: 2024-09-01 15:00:00
+2024-08-16 10:56:39,205 - INFO - Lock Released, Hall id: E, start: 2024-09-01 13:00:00, end: 2024-09-01 15:00:00
+2024-08-16 10:56:39,205 - INFO - Lock request received, Hall id: C, start: 2024-08-01T16:00:00, end: 2024-08-01T18:00:00
+2024-08-16 10:56:39,205 - INFO - Lock Aquired, Hall id: C, start: 2024-08-01 16:00:00, end: 2024-08-01 18:00:00
+2024-08-16 10:56:39,207 - INFO - Lock Released, Hall id: C, start: 2024-08-01 16:00:00, end: 2024-08-01 18:00:00
+2024-08-16 10:56:39,209 - INFO - Lock request received, Hall id: F, start: 2024-08-01T10:00:00, end: 2024-08-02T12:00:00
+2024-08-16 10:56:39,209 - INFO - Lock Aquired, Hall id: F, start: 2024-08-01 10:00:00, end: 2024-08-02 12:00:00
+2024-08-16 10:56:39,209 - INFO - Lock request received, Hall id: F, start: 2024-08-03T14:00:00, end: 2025-08-04T16:00:00
+2024-08-16 10:56:39,209 - INFO - Lock Aquired, Hall id: F, start: 2024-08-03 14:00:00, end: 2025-08-04 16:00:00
+2024-08-16 10:56:39,209 - INFO - Lock Released, Hall id: F, start: 2024-08-01 10:00:00, end: 2024-08-02 12:00:00
+2024-08-16 10:56:39,209 - INFO - Lock Released, Hall id: F, start: 2024-08-03 14:00:00, end: 2025-08-04 16:00:00
+2024-08-16 10:56:39,210 - INFO - Lock request received, Hall id: F, start: 2024-08-03T14:00:00, end: 2025-08-04T16:00:00
+2024-08-16 10:56:39,210 - INFO - Lock Aquired, Hall id: F, start: 2024-08-03 14:00:00, end: 2025-08-04 16:00:00
+2024-08-16 10:56:39,210 - INFO - Lock Released, Hall id: F, start: 2024-08-03 14:00:00, end: 2025-08-04 16:00:00
+2024-08-16 11:04:52,606 - INFO - Lock request received, Hall id: A, start: 2024-08-09T06:00, end: 2024-08-09T07:00
+2024-08-16 11:04:52,606 - INFO - Lock Aquired, Hall id: A, start: 2024-08-09 06:00:00, end: 2024-08-09 07:00:00
+2024-08-16 11:04:52,607 - INFO - Lock request received, Hall id: A, start: 2024-08-09T08:00, end: 2024-08-09T11:00
+2024-08-16 11:04:52,607 - INFO - Lock Aquired, Hall id: A, start: 2024-08-09 08:00:00, end: 2024-08-09 11:00:00
+2024-08-16 11:04:52,607 - INFO - Lock request received, Hall id: A, start: 2024-08-09T12:00, end: 2024-08-09T13:00
+2024-08-16 11:04:52,607 - INFO - Lock Aquired, Hall id: A, start: 2024-08-09 12:00:00, end: 2024-08-09 13:00:00
+2024-08-16 11:04:52,607 - INFO - Lock request received, Hall id: A, start: 2024-08-09T16:00, end: 2024-08-09T17:00
+2024-08-16 11:04:52,608 - INFO - Lock Aquired, Hall id: A, start: 2024-08-09 16:00:00, end: 2024-08-09 17:00:00
+2024-08-16 11:04:52,609 - INFO - Lock Released, Hall id: A, start: 2024-08-09 06:00:00, end: 2024-08-09 07:00:00
+2024-08-16 11:04:52,610 - INFO - Lock Released, Hall id: A, start: 2024-08-09 16:00:00, end: 2024-08-09 17:00:00
+2024-08-16 11:04:52,611 - INFO - Lock Released, Hall id: A, start: 2024-08-09 08:00:00, end: 2024-08-09 11:00:00
+2024-08-16 11:04:52,611 - INFO - Lock Released, Hall id: A, start: 2024-08-09 12:00:00, end: 2024-08-09 13:00:00
+2024-08-16 11:04:52,611 - INFO - Lock request received, Hall id: F, start: 2024-08-10T14:00, end: 2024-08-10T15:00
+2024-08-16 11:04:52,611 - INFO - Lock Aquired, Hall id: F, start: 2024-08-10 14:00:00, end: 2024-08-10 15:00:00
+2024-08-16 11:04:52,611 - INFO - Lock request received, Hall id: F, start: 2024-08-10T14:00, end: 2024-08-10T15:00
+2024-08-16 11:04:52,611 - INFO - Waiting for lock, Hall id: F, start: 2024-08-10 14:00:00, end: 2024-08-10 15:00:00
+2024-08-16 11:04:52,611 - INFO - Lock request received, Hall id: F, start: 2024-08-10T14:00, end: 2024-08-10T15:00
+2024-08-16 11:04:52,612 - INFO - Waiting for lock, Hall id: F, start: 2024-08-10 14:00:00, end: 2024-08-10 15:00:00
+2024-08-16 11:04:52,612 - INFO - Lock request received, Hall id: B, start: 2024-08-10T14:30, end: 2024-08-10T15:30
+2024-08-16 11:04:52,612 - INFO - Lock Aquired, Hall id: B, start: 2024-08-10 14:30:00, end: 2024-08-10 15:30:00
+2024-08-16 11:04:52,612 - INFO - Lock request received, Hall id: B, start: 2024-08-10T14:30, end: 2024-08-10T15:30
+2024-08-16 11:04:52,612 - INFO - Waiting for lock, Hall id: B, start: 2024-08-10 14:30:00, end: 2024-08-10 15:30:00
+2024-08-16 11:04:52,612 - INFO - Lock request received, Hall id: B, start: 2024-08-10T14:30, end: 2024-08-10T15:30
+2024-08-16 11:04:52,612 - INFO - Waiting for lock, Hall id: B, start: 2024-08-10 14:30:00, end: 2024-08-10 15:30:00
+2024-08-16 11:04:52,613 - INFO - Lock Released, Hall id: F, start: 2024-08-10 14:00:00, end: 2024-08-10 15:00:00
+2024-08-16 11:04:52,613 - ERROR - Lock wait timeout, Hall id: F, start: 2024-08-10 14:00:00, end: 2024-08-10 15:00:00
+2024-08-16 11:04:52,613 - INFO - Lock Aquired, Hall id: F, start: 2024-08-10 14:00:00, end: 2024-08-10 15:00:00
+2024-08-16 11:04:52,614 - ERROR - Lock wait timeout, Hall id: F, start: 2024-08-10 14:00:00, end: 2024-08-10 15:00:00
+2024-08-16 11:04:52,614 - INFO - Waiting for lock, Hall id: F, start: 2024-08-10 14:00:00, end: 2024-08-10 15:00:00
+2024-08-16 11:04:52,614 - INFO - Lock Released, Hall id: F, start: 2024-08-10 14:00:00, end: 2024-08-10 15:00:00
+2024-08-16 11:04:52,614 - ERROR - Lock wait timeout, Hall id: F, start: 2024-08-10 14:00:00, end: 2024-08-10 15:00:00
+2024-08-16 11:04:52,614 - INFO - Lock Released, Hall id: B, start: 2024-08-10 14:30:00, end: 2024-08-10 15:30:00
+2024-08-16 11:04:52,614 - INFO - Lock Aquired, Hall id: F, start: 2024-08-10 14:00:00, end: 2024-08-10 15:00:00
+2024-08-16 11:04:52,614 - ERROR - Lock wait timeout, Hall id: B, start: 2024-08-10 14:30:00, end: 2024-08-10 15:30:00
+2024-08-16 11:04:52,615 - INFO - Lock Aquired, Hall id: B, start: 2024-08-10 14:30:00, end: 2024-08-10 15:30:00
+2024-08-16 11:04:52,615 - ERROR - Lock wait timeout, Hall id: B, start: 2024-08-10 14:30:00, end: 2024-08-10 15:30:00
+2024-08-16 11:04:52,615 - INFO - Waiting for lock, Hall id: B, start: 2024-08-10 14:30:00, end: 2024-08-10 15:30:00
+2024-08-16 11:04:52,615 - INFO - Lock Released, Hall id: F, start: 2024-08-10 14:00:00, end: 2024-08-10 15:00:00
+2024-08-16 11:04:52,615 - INFO - Lock Released, Hall id: B, start: 2024-08-10 14:30:00, end: 2024-08-10 15:30:00
+2024-08-16 11:04:52,615 - ERROR - Lock wait timeout, Hall id: B, start: 2024-08-10 14:30:00, end: 2024-08-10 15:30:00
+2024-08-16 11:04:52,615 - INFO - Lock Aquired, Hall id: B, start: 2024-08-10 14:30:00, end: 2024-08-10 15:30:00
+2024-08-16 11:04:52,616 - INFO - Lock Released, Hall id: B, start: 2024-08-10 14:30:00, end: 2024-08-10 15:30:00
+2024-08-16 11:04:52,617 - INFO - Lock request received, Hall id: A, start: 2024-08-09T06:00, end: 2024-08-09T07:00
+2024-08-16 11:04:52,617 - INFO - Lock Aquired, Hall id: A, start: 2024-08-09 06:00:00, end: 2024-08-09 07:00:00
+2024-08-16 11:04:52,617 - INFO - Lock request received, Hall id: A, start: 2024-08-09T16:00, end: 2024-08-09T17:00
+2024-08-16 11:04:52,618 - INFO - Lock request received, Hall id: A, start: 2024-09-09T16:00, end: 2024-09-09T17:00
+2024-08-16 11:04:52,618 - INFO - Lock Aquired, Hall id: A, start: 2024-08-09 16:00:00, end: 2024-08-09 17:00:00
+2024-08-16 11:04:52,618 - INFO - Lock Aquired, Hall id: A, start: 2024-09-09 16:00:00, end: 2024-09-09 17:00:00
+2024-08-16 11:04:52,618 - INFO - Lock request received, Hall id: A, start: 2024-09-09T16:00, end: 2024-09-09T17:00
+2024-08-16 11:04:52,618 - INFO - Waiting for lock, Hall id: A, start: 2024-09-09 16:00:00, end: 2024-09-09 17:00:00
+2024-08-16 11:04:52,619 - INFO - Lock Released, Hall id: A, start: 2024-08-09 06:00:00, end: 2024-08-09 07:00:00
+2024-08-16 11:04:52,619 - INFO - Lock Released, Hall id: A, start: 2024-09-09 16:00:00, end: 2024-09-09 17:00:00
+2024-08-16 11:04:52,619 - ERROR - Lock wait timeout, Hall id: A, start: 2024-09-09 16:00:00, end: 2024-09-09 17:00:00
+2024-08-16 11:04:52,619 - INFO - Lock Aquired, Hall id: A, start: 2024-09-09 16:00:00, end: 2024-09-09 17:00:00
+2024-08-16 11:04:52,620 - INFO - Lock Released, Hall id: A, start: 2024-08-09 16:00:00, end: 2024-08-09 17:00:00
+2024-08-16 11:04:52,620 - INFO - Lock Released, Hall id: A, start: 2024-09-09 16:00:00, end: 2024-09-09 17:00:00
+2024-08-16 11:04:57,751 - INFO - Lock request received, Hall id: F, start: 2024-08-01T10:00:00, end: 2024-08-02T12:00:00
+2024-08-16 11:04:57,751 - INFO - Lock Aquired, Hall id: F, start: 2024-08-01 10:00:00, end: 2024-08-02 12:00:00
+2024-08-16 11:04:57,754 - INFO - Lock Released, Hall id: F, start: 2024-08-01 10:00:00, end: 2024-08-02 12:00:00
+2024-08-16 11:04:57,754 - INFO - Lock request received, Hall id: B, start: 2024-08-01T10:00:00, end: 2024-08-01T12:00:00
+2024-08-16 11:04:57,754 - INFO - Lock Aquired, Hall id: B, start: 2024-08-01 10:00:00, end: 2024-08-01 12:00:00
+2024-08-16 11:04:57,756 - INFO - Lock Released, Hall id: B, start: 2024-08-01 10:00:00, end: 2024-08-01 12:00:00
+2024-08-16 11:04:57,756 - INFO - Lock request received, Hall id: E, start: 2024-09-01T13:00:00, end: 2024-09-01T15:00:00
+2024-08-16 11:04:57,756 - INFO - Lock Aquired, Hall id: E, start: 2024-09-01 13:00:00, end: 2024-09-01 15:00:00
+2024-08-16 11:04:57,757 - INFO - Lock Released, Hall id: E, start: 2024-09-01 13:00:00, end: 2024-09-01 15:00:00
+2024-08-16 11:04:57,757 - INFO - Lock request received, Hall id: C, start: 2024-08-01T16:00:00, end: 2024-08-01T18:00:00
+2024-08-16 11:04:57,757 - INFO - Lock Aquired, Hall id: C, start: 2024-08-01 16:00:00, end: 2024-08-01 18:00:00
+2024-08-16 11:04:57,758 - INFO - Lock Released, Hall id: C, start: 2024-08-01 16:00:00, end: 2024-08-01 18:00:00
+2024-08-16 11:04:57,759 - INFO - Lock request received, Hall id: F, start: 2024-08-01T10:00:00, end: 2024-08-02T12:00:00
+2024-08-16 11:04:57,759 - INFO - Lock Aquired, Hall id: F, start: 2024-08-01 10:00:00, end: 2024-08-02 12:00:00
+2024-08-16 11:04:57,759 - INFO - Lock request received, Hall id: F, start: 2024-08-03T14:00:00, end: 2025-08-04T16:00:00
+2024-08-16 11:04:57,759 - INFO - Lock Aquired, Hall id: F, start: 2024-08-03 14:00:00, end: 2025-08-04 16:00:00
+2024-08-16 11:04:57,760 - INFO - Lock Released, Hall id: F, start: 2024-08-01 10:00:00, end: 2024-08-02 12:00:00
+2024-08-16 11:04:57,760 - INFO - Lock Released, Hall id: F, start: 2024-08-03 14:00:00, end: 2025-08-04 16:00:00
+2024-08-16 11:04:57,760 - INFO - Lock request received, Hall id: F, start: 2024-08-03T14:00:00, end: 2025-08-04T16:00:00
+2024-08-16 11:04:57,760 - INFO - Lock Aquired, Hall id: F, start: 2024-08-03 14:00:00, end: 2025-08-04 16:00:00
+2024-08-16 11:04:57,760 - INFO - Lock Released, Hall id: F, start: 2024-08-03 14:00:00, end: 2025-08-04 16:00:00

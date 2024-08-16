@@ -1,19 +1,19 @@
 import unittest
 import threading
 import time
-from services.booking_service import BookingService  
+from controller.booking_controller import BookingController
+ 
 
 class TestBookingConcurrency(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        cls.booking_service = BookingService()
+        cls.controller = BookingController()
         cls.booking_ids = []  
 
     def test_01_concurrent_bookings_different_slots(self):
-        """Test booking different slots concurrently with multiple threads."""
         def book_slot(hall_id, start_time, end_time):
-            result = self.booking_service.book_hall(hall_id, start_time, end_time)
+            result = self.controller.book_hall(hall_id, start_time, end_time)
             # print(result)
             if "successful" in result:
                 self.booking_ids.append(result[-6:])  #  for later verification
@@ -40,9 +40,8 @@ class TestBookingConcurrency(unittest.TestCase):
 
     def test_02_concurrent_bookings_same_slot(self):
 
-        """Test booking the same slot concurrently with multiple threads."""
         def book_same_slot(hall_id, start_time, end_time):
-            result = self.booking_service.book_hall(hall_id, start_time, end_time)
+            result = self.controller.book_hall(hall_id, start_time, end_time)
             if "successful" in result:
                 self.booking_ids.append(result[-6:])  #  for later verification
                 # print("appended",self.booking_ids)
@@ -53,7 +52,7 @@ class TestBookingConcurrency(unittest.TestCase):
         start_time = "2024-08-10T14:00"
         end_time = "2024-08-10T15:00"
 
-        for _ in range(3):  # Three threads for the same slot
+        for _ in range(3):  # Three threads for the slot1
             thread = threading.Thread(target=book_same_slot, args=(hall_id, start_time, end_time))
             threads.append(thread)
             thread.start()
@@ -62,7 +61,7 @@ class TestBookingConcurrency(unittest.TestCase):
         start_time_2 = "2024-08-10T14:30"
         end_time_2 = "2024-08-10T15:30"
 
-        for _ in range(3):  # Three threads for a different slot
+        for _ in range(3):  # Three threads for slot 2
             thread = threading.Thread(target=book_same_slot, args=(hall_id_2, start_time_2, end_time_2))
             threads.append(thread)
             thread.start()
@@ -73,7 +72,6 @@ class TestBookingConcurrency(unittest.TestCase):
         self.assertLessEqual(len(self.booking_ids), 6)  # Maximum 6 successful bookings
 
     def test_03_concurrent_updates(self):
-        """Test updating bookings concurrently with multiple threads."""
         if len(self.booking_ids) < 2:
             self.fail("Not enough booking IDs to test updates.")
 
@@ -86,7 +84,7 @@ class TestBookingConcurrency(unittest.TestCase):
 
         def update_booking(booking_id):
             nonlocal successfull_update_count
-            result = self.booking_service.update_booking(booking_id, new_start_time, new_end_time)
+            result = self.controller.update_booking(booking_id, new_start_time, new_end_time)
             print(result)
             if "successfully" in result:
                 successfull_update_count += 1
@@ -105,6 +103,6 @@ class TestBookingConcurrency(unittest.TestCase):
         self.assertEqual(successfull_update_count,1)
 
 if __name__ == "__main__":
-    service = BookingService()
+    service = BookingController()
     service.delete_all_bookings()
     unittest.main()

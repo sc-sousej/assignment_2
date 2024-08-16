@@ -6,7 +6,7 @@ from threading import Lock
 from utils.logger import setup_logger
 from datetime import datetime
 
-class BookingService:
+class BookingController:
     
     _instance = None
     _lock = Lock()
@@ -38,8 +38,6 @@ class BookingService:
             self.logger.error("Date format Invalid")
             raise Exception(f"date format invalid")
         
-        # finally:
-        #     return False
         
     def delete_all_bookings(self):
         result = self.db.bookings.delete_many({})
@@ -66,12 +64,12 @@ class BookingService:
         return available_halls
 
     def book_hall(self, hall_id, start_time, end_time):
+        self.logger.info(f"Received booking request: Hall {hall_id}, Start: {start_time}, End: {end_time}")
+
         if not self.verify_time_range(start_time,end_time):
             return "Error: End time must be after start time. Please try again."
 
-        self.logger.info(f"Received booking request: Hall {hall_id}, Start: {start_time}, End: {end_time}")
-        res = self.lock_service.acquire_lock(hall_id, start_time, end_time)
-        if res:
+        if self.lock_service.acquire_lock(hall_id, start_time, end_time):
             try:
                 if hall_id in self.fetch_available_halls(start_time, end_time):
                     booking = Booking(hall_id, start_time, end_time)

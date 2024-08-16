@@ -6,21 +6,6 @@ from utils.logger import setup_logger
 import sys
 
 
-class Singleton(object):
-    _instance = None
-
-    def __init__(self):
-        raise RuntimeError('Call instance() instead')
-
-    @classmethod
-    def instance(cls):
-        if cls._instance is None:
-            # print('Creating new instance')
-            cls._instance = cls.__new__(cls)
-            # Put any initialization here.
-        return cls._instance
-
-
 
 # sys.modules["main"] = sys.modules["__main__"]
 
@@ -87,6 +72,7 @@ class LockManager:
 
                         self.conditions[hall_id][(start_time, end_time)].wait(timeout=timeout)
                         self.logger.error(f'Lock wait timeout, Hall id: {hall_id}, start: {start_time}, end: {end_time}')
+                        
 
                         # print("lock wait timeout")
 
