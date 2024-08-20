@@ -32,8 +32,8 @@ class BookingAPI:
             start_time = data.get("start_time")
             end_time = data.get("end_time")
             self.logger.info(f"Received fetch available hall request: Start: {start_time}, End: {end_time}")
-            available = self.booking_controller.fetch_available_halls(start_time, end_time)
-            return {"output": available}
+            available_halls = self.booking_controller.fetch_available_halls(start_time, end_time)
+            return available_halls
         except Exception as e:
             self.logger.error("Invalid Input for fetch available request")
 

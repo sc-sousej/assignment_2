@@ -15,7 +15,8 @@ class TestBookingcontroller(unittest.TestCase):
     def test_01_fetch_available_halls(self):
         available_halls = self.controller.fetch_available_halls("2024-08-01T10:00:00", "2024-08-01T11:00:00")
         # print(available_halls)
-        self.assertIn("F", available_halls)
+        hall_ids = [hall['hall_id'] for hall in available_halls]
+        self.assertIn("F", hall_ids)
 
     def test_02_book_hall(self):
         result = self.controller.book_hall("F", "2024-08-01T10:00:00", "2024-08-02T12:00:00")

@@ -26,3 +26,11 @@
 2024-08-16 15:32:53,279 - INFO - Received fetch bookings request: Start: 2024-08-01, End: 2024-08-30
 2024-08-16 15:33:17,533 - INFO - Received update request: Booking ID: 207694, Start: 2024-08-01T10:00:00, End: 2024-08-20T11:00:00
 2024-08-16 15:33:52,183 - INFO - Received cancellation request: Booking ID: 207696
+2024-08-20 10:53:35,609 - INFO - Received fetch available hall request: Start: 2024-08-01T10:00:00, End: 2024-08-30T11:00:00
+2024-08-20 10:57:39,515 - INFO - Received fetch available hall request: Start: 2024-08-01T10:00:00, End: 2024-08-30T11:00:00
+2024-08-20 10:59:24,656 - INFO - Received fetch available hall request: Start: 2024-08-01T10:00:00, End: 2024-08-30T11:00:00
+2024-08-20 11:00:28,780 - INFO - Received fetch available hall request: Start: 2024-08-01T10:00:00, End: 2024-08-30T11:00:00
+2024-08-20 11:00:28,781 - ERROR - Invalid Input for fetch available request
+2024-08-20 11:00:48,988 - INFO - Received fetch available hall request: Start: 2024-08-01T10:00:00, End: 2024-08-30T11:00:00
+2024-08-20 11:25:59,980 - INFO - Received fetch available hall request: Start: 2024-08-01T10:00:00, End: 2024-08-30T11:00:00
+2024-08-20 11:26:22,943 - INFO - Received booking request: Hall F, Start: 2024-07-15T10:00:00, End: 2024-07-15T12:00:00

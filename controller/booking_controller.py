@@ -47,7 +47,6 @@ class BookingController:
         result = self.db.delete_database()
         return f"Deleted {result.deleted_count} bookings from the database."
     
-    # def fetch_available_halls2(self, start_time, end_time, capacity =)
 
     def fetch_available_halls(self, start_time, end_time):
         try:
@@ -62,8 +61,8 @@ class BookingController:
         booked_halls = [booking['hall_id'] for booking in bookings]
         available_halls = [{'hall_id': hall.name, 'capacity': hall.value} for hall in halls if hall.name not in booked_halls]
         
-        available_halls_json = json.dumps({"available_halls": available_halls})
-        return available_halls_json
+        return available_halls
+    
 
     def book_hall(self, hall_id, start_time, end_time):
         self.logger.info(f"Received booking request: Hall {hall_id}, Start: {start_time}, End: {end_time}")
@@ -73,12 +72,12 @@ class BookingController:
 
         if self.lock_service.acquire_lock(hall_id, start_time, end_time):
             try:
-                if hall_id in self.fetch_available_halls(start_time, end_time):
+                available_halls = self.fetch_available_halls(start_time, end_time)
+                available_hall_ids = [hall['hall_id'] for hall in available_halls]
+                if hall_id in available_hall_ids:
                     booking = Booking(hall_id, start_time, end_time)
                     booking_id = self.db.insert_hall_booking(booking.__dict__)
-                    # print("updation result= ",result)
-                    # booking.set_booking_id(result.inserted_id)
-                    # self.db.bookings.update_one({'_id': result.inserted_id}, {'$set': {'booking_id': booking.booking_id}})
+
                     self.logger.info(f"Booking successful for hall {hall_id}. Booking ID: {booking_id}")
                     return f"Booking successful for hall {hall_id}. Booking ID: {booking_id}"
                 else:
