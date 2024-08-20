@@ -5,6 +5,10 @@ from collections import defaultdict
 from threading import Lock
 from utils.logger import setup_logger
 from datetime import datetime
+from models.halls import halls
+import json
+
+
 
 class BookingController:
     
@@ -24,7 +28,7 @@ class BookingController:
         self.logger = setup_logger("booking_service.log")
         if self.db is None:
             self.logger.error("Connection with DB Failed!")
-        self.all_halls = ['A', 'B', 'C', 'D', 'E', 'F']
+        # self.all_halls = ['A', 'B', 'C', 'D', 'E', 'F']
 
     def verify_time_range(self,start, end):  
         try:
@@ -43,8 +47,9 @@ class BookingController:
         result = self.db.delete_database()
         return f"Deleted {result.deleted_count} bookings from the database."
     
+    # def fetch_available_halls2(self, start_time, end_time, capacity =)
 
-    def fetch_available_halls(self, start_time, end_time, booking_id = None):
+    def fetch_available_halls(self, start_time, end_time):
         try:
             self.logger.info(f"Received fetch available hall request: Start: {start_time}, End: {end_time}")
             if not self.verify_time_range(start_time,end_time):
@@ -55,8 +60,10 @@ class BookingController:
         bookings = self.db.fetch_available(start_time,end_time)
 
         booked_halls = [booking['hall_id'] for booking in bookings]
-        available_halls = [hall for hall in self.all_halls if hall not in booked_halls]
-        return available_halls
+        available_halls = [{'hall_id': hall.name, 'capacity': hall.value} for hall in halls if hall.name not in booked_halls]
+        
+        available_halls_json = json.dumps({"available_halls": available_halls})
+        return available_halls_json
 
     def book_hall(self, hall_id, start_time, end_time):
         self.logger.info(f"Received booking request: Hall {hall_id}, Start: {start_time}, End: {end_time}")
@@ -97,7 +104,7 @@ class BookingController:
 
         try:
             bookings = self.db.fetch_bookings(start_date,end_date)
-            print("bkings===",bookings)
+            # print("bkings===",bookings)
             booked_records = []
             for booking in bookings:
                 booked_records.append({

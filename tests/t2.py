@@ -10,16 +10,19 @@ from datetime import datetime
 
 
 
-    
+
 load_dotenv()
 from controller.booking_controller import BookingController
 
 
 def test_fetch_available_halls():
     controller = BookingController()
+    # print("call")
     available_halls = controller.fetch_available_halls("2024-08-01T10:00:00", "2024-08-01T12:00:00")
-    print(available_halls)
+    print("ans=",available_halls)
     # assert "A" in available_halls  # Example assertion
+    # {"available_halls":[{'hall_id':'A',"capacity":50},{'hall_id':'B',"capacity":100}]}
+
 
 def test_fetch_all_booked_halls():
     controller = BookingController()
@@ -64,8 +67,8 @@ def test_update_booking():
 
 # test_update_booking()
 # test_delete_booking()
-# test_fetch_available_halls()
-test_fetch_all_booked_halls()
+test_fetch_available_halls()
+# test_fetch_all_booked_halls()
 # test_book_multiple_halls()
 # test_book_hall()
 
