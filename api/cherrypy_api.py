@@ -10,7 +10,6 @@ class BookingAPI:
     def __init__(self):
         self.booking_controller = BookingController()
         self.client = MongoClient("mongodb://localhost:27017/")
-        # self.db = self.client['booking_system']
         self.logger = setup_logger("booking_api.log")
 
     @cherrypy.expose

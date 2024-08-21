@@ -1,4 +1,6 @@
 from pymongo import MongoClient
+from datetime import datetime, timezone
+
 
 class BookingDatabase:
     _instance = None
@@ -57,6 +59,13 @@ class BookingDatabase:
                 {'$set': {'start_time': new_start_time, 'end_time': new_end_time}}
             )
 
+    def get_lock(self, hall_id, session):
+        return self.db['locks'].insert_one(
+            {'_id': f'lock_{hall_id}', 'locked_at': datetime.now(timezone.utc)},
+            session=session)
+    
+    def delete_lock(self, hall_id, session):
+        self.db['locks'].delete_one({'_id': f'lock_{hall_id}'}, session=session)
 
 
 

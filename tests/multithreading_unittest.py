@@ -38,6 +38,7 @@ class TestBookingConcurrency(unittest.TestCase):
 
         self.assertEqual(len(self.booking_ids), 4)
 
+
     def test_02_concurrent_bookings_same_slot(self):
 
         def book_same_slot(hall_id, start_time, end_time):
@@ -71,6 +72,7 @@ class TestBookingConcurrency(unittest.TestCase):
 
         self.assertLessEqual(len(self.booking_ids), 6)  # Maximum 6 successful bookings
 
+
     def test_03_concurrent_updates(self):
         if len(self.booking_ids) < 2:
             self.fail("Not enough booking IDs to test updates.")
@@ -86,7 +88,7 @@ class TestBookingConcurrency(unittest.TestCase):
             nonlocal successfull_update_count
             result = self.controller.update_booking(booking_id, new_start_time, new_end_time)
             print(result)
-            if "successfully" in result:
+            if "successful" in result:
                 successfull_update_count += 1
             return result
 

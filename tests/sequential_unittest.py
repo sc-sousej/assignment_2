@@ -14,7 +14,6 @@ class TestBookingcontroller(unittest.TestCase):
 
     def test_01_fetch_available_halls(self):
         available_halls = self.controller.fetch_available_halls("2024-08-01T10:00:00", "2024-08-01T11:00:00")
-        # print(available_halls)
         hall_ids = [hall['hall_id'] for hall in available_halls]
         self.assertIn("F", hall_ids)
 
@@ -37,17 +36,14 @@ class TestBookingcontroller(unittest.TestCase):
 
     def test_04_fetch_all_booked_halls(self):
         all_booked_halls = self.controller.fetch_bookings("2024-08-01", "2024-08-01")
-        # print("hello ", len(all_booked_halls))
         self.assertEqual(len(all_booked_halls), 3)
 
     def test_05_update_booking(self):
         result = self.controller.update_booking(self.__class__.test_booking_id, "2024-08-03T14:00:00", "2025-08-04T16:00:00")
-        # print(result)
         self.assertIn("updated successfully", result)
 
     def test_06_delete_booking(self):
         result = self.controller.cancel_booking(self.__class__.test_booking_id)
-        # print(result)
         self.assertIn("cancelled successfully", result)
 
 if __name__ == '__main__':

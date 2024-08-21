@@ -6,7 +6,6 @@ import threading
 from utils.lock_manager import LockManager
 from datetime import datetime
 # from utils.lock_manager import Singleton
-# from tests.zaid_lock import CustomLock
 
 
 
@@ -31,11 +30,34 @@ def test_fetch_all_booked_halls():
     print("hello",all_booked_halls)
     
 
-def test_book_hall():
+def test_book_hall1():
+    print("start 1")
     controller = BookingController()
     print(controller)
-    time.sleep(3)
+    # time.sleep(3)
     result = controller.book_hall("D", "2024-09-20T10:00:00", "2024-09-20T12:00:00")
+    # controller.book_hall()
+    print(result)
+    # assert result == "Booking successful"
+
+def test_book_hall2():
+    print("start 1")
+
+    controller = BookingController()
+    print(controller)
+    # time.sleep(3)
+    result = controller.book_hall("D", "2024-09-20T09:00:00", "2024-09-20T12:00:00")
+    # controller.book_hall()
+    print(result)
+    # assert result == "Booking successful"
+
+def test_book_hall3():
+    print("start 1")
+
+    controller = BookingController()
+    print(controller)
+    # time.sleep(3)
+    result = controller.book_hall("D", "2024-09-20T07:00:00", "2024-09-20T11:00:00")
     # controller.book_hall()
     print(result)
     # assert result == "Booking successful"
@@ -67,7 +89,7 @@ def test_update_booking():
 
 # test_update_booking()
 # test_delete_booking()
-test_fetch_available_halls()
+# test_fetch_available_halls()
 # test_fetch_all_booked_halls()
 # test_book_multiple_halls()
 # test_book_hall()
@@ -87,7 +109,7 @@ test_fetch_available_halls()
 
 # # Create and start threads
 # for i in range(num_threads):
-#     thread = threading.Thread(target=test_book_hall, name=f"Thread-{i+1}")
+#     thread = threading.Thread(target=test_book_hall1, name=f"Thread-{i+1}")
 #     threads.append(thread)
 #     thread.start()
 
@@ -98,3 +120,21 @@ test_fetch_available_halls()
 # print("All threads have finished execution.")
 # dateStr = input("enter date: ")
 # print(datetime.fromisoformat(dateStr))
+service = BookingController()
+service.delete_all_bookings()
+
+
+thread1 = threading.Thread(target=test_book_hall1)
+thread2 = threading.Thread(target=test_book_hall2)
+thread3 = threading.Thread(target=test_book_hall3)
+
+# Start the threads
+thread1.start()
+thread2.start()
+thread3.start()
+
+# Wait for all threads to complete
+thread1.join()
+thread2.join()
+thread3.join()
+print("All threads have finished execution.")
