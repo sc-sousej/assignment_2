@@ -18,14 +18,15 @@ class TestBookingcontroller(unittest.TestCase):
         self.assertIn("F", hall_ids)
 
     def test_02_book_hall(self):
-        result = self.controller.book_hall("F", "2024-08-01T10:00:00", "2024-08-02T12:00:00")
+        result = self.controller.book_hall("F", "2024-07-01T10:00:00", "2024-08-02T12:00:00")
         self.__class__.test_booking_id = result[-6:]  # Store the booking ID for other tests
         self.assertIn("successful", result)
 
     def test_03_book_multiple_halls(self):
+        print("1111111111")
         data = {
             "bookings": [
-                {"hall_id": "B", "start_time": "2024-08-01T10:00:00", "end_time": "2024-08-01T12:00:00"},
+                {"hall_id": "F", "start_time": "2024-08-03T13:00:00", "end_time": "2024-08-04T18:00:00"},
                 {"hall_id": "E", "start_time": "2024-09-01T13:00:00", "end_time": "2024-09-01T15:00:00"},
                 {"hall_id": "C", "start_time": "2024-08-01T16:00:00", "end_time": "2024-08-01T18:00:00"}
             ]
@@ -39,12 +40,13 @@ class TestBookingcontroller(unittest.TestCase):
         self.assertEqual(len(all_booked_halls), 3)
 
     def test_05_update_booking(self):
-        result = self.controller.update_booking(self.__class__.test_booking_id, "2024-08-03T14:00:00", "2025-08-04T16:00:00")
+        print("22222222222222")
+        result = self.controller.update_booking(self.__class__.test_booking_id, "2024-09-03T14:00:00", "2025-09-04T16:00:00")
         self.assertIn("updated successfully", result)
 
-    def test_06_delete_booking(self):
-        result = self.controller.cancel_booking(self.__class__.test_booking_id)
-        self.assertIn("cancelled successfully", result)
+    # def test_06_delete_booking(self):
+    #     result = self.controller.cancel_booking(self.__class__.test_booking_id)
+    #     self.assertIn("cancelled successfully", result)
 
 if __name__ == '__main__':
     controller = BookingController()

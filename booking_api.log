@@ -45,3 +45,7 @@
 2024-08-21 13:22:52,583 - INFO - Received booking request: Hall F, Start: 2024-07-15T10:00:00, End: 2024-07-15T12:00:00
 2024-08-21 13:23:19,298 - INFO - Received update request: Booking ID: ca6da8, Start: 2024-08-01T10:00:00, End: 2024-08-20T11:00:00
 2024-08-21 13:24:17,509 - INFO - Received update request: Booking ID: ca6da8, Start: 2024-08-01T10:00:00, End: 2024-08-02T11:00:00
+2024-08-21 15:19:54,999 - INFO - Received fetch available hall request: Start: 2024-08-01T10:00:00, End: 2024-08-30T11:00:00
+2024-08-21 15:20:02,973 - INFO - Received booking request: Hall F, Start: 2024-07-15T10:00:00, End: 2024-07-15T12:00:00
+2024-08-21 16:30:42,847 - INFO - Received fetch available hall request: Start: 2024-08-01T10:00:00, End: 2024-08-30T11:00:00
+2024-08-27 11:33:07,124 - INFO - Received fetch available hall request: Start: 2024-08-01T10:00:00, End: 2024-08-30T11:00:00

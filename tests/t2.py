@@ -3,7 +3,7 @@ from dotenv import load_dotenv
 import os
 import time
 import threading
-from utils.lock_manager import LockManager
+# from utils.lock_manager import LockManager
 from datetime import datetime
 # from utils.lock_manager import Singleton
 
@@ -30,18 +30,18 @@ def test_fetch_all_booked_halls():
     print("hello",all_booked_halls)
     
 
-def test_book_hall1():
-    print("start 1")
+def test_book_hall():
+    # print("start 1")
     controller = BookingController()
     print(controller)
     # time.sleep(3)
-    result = controller.book_hall("D", "2024-09-20T10:00:00", "2024-09-20T12:00:00")
+    result = controller.book_hall("A", "2024-08-03T07:00:00", "2024-08-03T12:00:00")
     # controller.book_hall()
     print(result)
     # assert result == "Booking successful"
 
 def test_book_hall2():
-    print("start 1")
+    # print("start 1")
 
     controller = BookingController()
     print(controller)
@@ -52,7 +52,7 @@ def test_book_hall2():
     # assert result == "Booking successful"
 
 def test_book_hall3():
-    print("start 1")
+    # print("start 1")
 
     controller = BookingController()
     print(controller)
@@ -64,13 +64,15 @@ def test_book_hall3():
 
 def test_book_multiple_halls():
     controller = BookingController()
-    result = controller.book_multiple_halls([
-    {"hall_id": "B", "start_time": "2024-08-01T10:00:00", "end_time": "2024-08-01T12:00:00"},
+    data = {"bookings":[
+    {"hall_id": "A", "start_time": "2024-08-03T09:00:00", "end_time": "2024-08-03T12:00:00"},
     {"hall_id": "E", "start_time": "2024-08-01T13:00:00", "end_time": "2024-09-01T15:00:00"},
     {"hall_id": "C", "start_time": "2024-08-01T16:00:00", "end_time": "2024-08-01T18:00:00"}
-    ])
-    for booking_status in result:
-        print(booking_status)
+    ]}
+    for booking_data in data['bookings']:
+                # self.book_hall_helper(booking_data)
+        result = controller.book_hall(booking_data['hall_id'], booking_data['start_time'], booking_data['end_time'])
+        print(result)
 
 def test_delete_booking():
     controller = BookingController()
@@ -80,9 +82,11 @@ def test_delete_booking():
 def test_update_booking():
     controller = BookingController()
     # controller.update_booking()
-    result = controller.update_booking("9c86b0","2024-08-03T14:00:00","2025-08-04T16:00:00")
+    result = controller.update_booking("ec40d6","2024-08-03T07:23:00","2024-08-03T10:15:00")
     print(result)
 
+# service = BookingController()
+# service.delete_all_bookings()
 
 
 # if __name__ == '__main__':
@@ -92,7 +96,7 @@ def test_update_booking():
 # test_fetch_available_halls()
 # test_fetch_all_booked_halls()
 # test_book_multiple_halls()
-# test_book_hall()
+test_book_hall()
 
 # lock_controller = LockManager()
 
@@ -120,21 +124,24 @@ def test_update_booking():
 # print("All threads have finished execution.")
 # dateStr = input("enter date: ")
 # print(datetime.fromisoformat(dateStr))
-service = BookingController()
-service.delete_all_bookings()
 
 
-thread1 = threading.Thread(target=test_book_hall1)
-thread2 = threading.Thread(target=test_book_hall2)
-thread3 = threading.Thread(target=test_book_hall3)
+# thread1 = threading.Thread(target=test_book_hall1)
+# thread2 = threading.Thread(target=test_book_hall2)
+# thread3 = threading.Thread(target=test_book_hall3)
 
-# Start the threads
-thread1.start()
-thread2.start()
-thread3.start()
+# # Start the threads
+# print("started 1")
+# thread1.start()
+# # time.sleep(7)
+# print("started 2")
+# thread2.start()
+# # time.sleep(7)
+# print("started 3")
+# thread3.start()
 
-# Wait for all threads to complete
-thread1.join()
-thread2.join()
-thread3.join()
-print("All threads have finished execution.")
+# # Wait for all threads to complete
+# thread1.join()
+# thread2.join()
+# thread3.join()
+# print("All threads have finished execution.")

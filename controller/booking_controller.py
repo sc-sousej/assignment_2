@@ -4,6 +4,7 @@ from utils.logger import setup_logger
 from datetime import datetime
 from models.halls import halls
 from threading import Lock
+import threading
 import pymongo
 import time
 
@@ -36,6 +37,10 @@ class BookingController:
         self.logger = setup_logger("booking_controller.log")
         if self.db is None:
             self.logger.error("Connection with DB Failed!")
+        # self.locks = {hall.name:False for hall in halls}          
+
+    # def aquire_hall_lock(self, hall_id):
+
 
 
     def verify_time_range(self, start, end) -> bool:  
@@ -75,7 +80,46 @@ class BookingController:
         return f"Deleted {result.deleted_count} bookings from the database."
     
 
-    def book_hall(self, hall_id, start_time, end_time) -> str:
+    def book_hall(self, hall_id, start_time, end_time):
+
+        self.logger.info(f"Received booking request: Hall {hall_id}, Start: {start_time}, End: {end_time}")
+
+        if not self.verify_time_range(start_time, end_time):
+            return "Error: End time must be after start time. Please try again."
+        
+        booking = Booking(hall_id, start_time, end_time)
+
+        # query to search for conflicting bookings
+        search_query = {
+            "hall_id": hall_id,
+            "$and": [
+                {"start_time": {"$lt": end_time}}, 
+                {"end_time": {"$gt": start_time}}
+            ]}
+
+        update_query = {
+            "$setOnInsert": booking.__dict__
+            }
+        
+        result = self.db.update_one(search_query, update_query, upsert=True)
+
+        if result.matched_count > 0:
+            self.logger.info(f"Booking Unsuccessful for hall {hall_id}. Hall already booked!")
+            return "Hall already booked for this slot"
+        else:
+            # Updating the booking ID in inserted record
+            booking_id = str(result.upserted_id)[-6:]
+            search_query = {'_id': result.upserted_id}
+            update_query = {'$set': {'booking_id': booking_id}}
+            self.db.update_one(search_query, update_query)
+            self.logger.info(f"Booking successful for hall {hall_id}. Booking ID: {booking_id}")
+
+            return f"Booking successful for hall {hall_id}. Booking ID: {booking_id}"
+
+
+
+
+    def book_hall2(self, hall_id, start_time, end_time) -> str:
         """
         Attempt to book a hall for the given time range. Handles concurrency using a lock.
 
@@ -98,50 +142,84 @@ class BookingController:
         
 
         while waited_time < max_wait_time:
+            if self.locks[hall_id]:
+                # Lock is already acquired by another process
+                time.sleep(retry_interval)
+                waited_time += retry_interval
+                continue
+
+            # time.sleep(1)
+            self.locks[hall_id] = True
             try:
-                with self.db.client.start_session() as session:
-                    with session.start_transaction():
-                        lock_acquired = False
+                available_halls = self.fetch_available_halls(start_time, end_time)
+                available_hall_ids = [hall['hall_id'] for hall in available_halls]
 
-                        try:
-                            lock_result = self.db.get_lock(hall_id, session)
-                            lock_acquired = lock_result.inserted_id == f'lock_{hall_id}'
-                        except Exception:
-                            # Lock is already acquired by another process
-                            time.sleep(retry_interval)
-                            waited_time += retry_interval
-                            continue
+                if hall_id in available_hall_ids:
+                    # print("hall available")
+                    booking = Booking(hall_id, start_time, end_time)
+                    booking_id = self.db.insert_hall_booking(booking.__dict__)
+                    self.logger.info(f"Booking successful for hall {hall_id}. Booking ID: {booking_id}")
 
-                        if lock_acquired:
-                            try:
-                                available_halls = self.fetch_available_halls(start_time, end_time)
-                                available_hall_ids = [hall['hall_id'] for hall in available_halls]
-
-                                if hall_id in available_hall_ids:
-                                    # print("hall available")
-                                    booking = Booking(hall_id, start_time, end_time)
-                                    booking_id = self.db.insert_hall_booking(booking.__dict__)
-                                    self.logger.info(f"Booking successful for hall {hall_id}. Booking ID: {booking_id}")
-
-                                    return f"Booking successful for hall {hall_id}. Booking ID: {booking_id}"
-                                else:
-                                    return "Hall is already booked for the given time slot."
-                            finally:
-                                # releasing hall lock
-                                self.db.delete_lock(hall_id, session)
-                        else:
-                            self.logger.error(f"Lock aquired failed, Hall {hall_id}, Start: {start_time}, End: {end_time}")
-            
-            except pymongo.errors.OperationFailure as e:
-                if 'errorLabels' in e.details and 'TransientTransactionError' in e.details['errorLabels']:
-                    waited_time += retry_interval
-                    # self.logger.warning(f"Transient error encountered. Retrying transaction ...")
-                    time.sleep(retry_interval)
+                    return f"Booking successful for hall {hall_id}. Booking ID: {booking_id}"
                 else:
-                    self.logger.error(f"Book hall failed! Hall {hall_id}, Start: {start_time}, End: {end_time}, Error: {e}")
-                    return f"An error occurred while processing the booking: {e.details['errmsg']}"
+                    return "Hall is already booked for the given time slot."
+            finally:
+                # releasing hall lock
+                self.locks[hall_id]= False
+        self.logger.error(f"Timeout! Lock aquired failed, Hall {hall_id}, Start: {start_time}, End: {end_time}")
+        return "timeout"
+
+
+
+
+
+
+
+
+        #     try:
+        #         with self.db.client.start_session() as session:
+        #             with session.start_transaction():
+        #                 lock_acquired = False
+
+        #                 try:
+        #                     lock_result = self.db.get_lock(hall_id, session)
+        #                     lock_acquired = lock_result.inserted_id == f'lock_{hall_id}'
+        #                 except Exception:
+        #                     # Lock is already acquired by another process
+        #                     time.sleep(retry_interval)
+        #                     waited_time += retry_interval
+        #                     continue
+
+        #                 if lock_acquired:
+        #                     try:
+        #                         available_halls = self.fetch_available_halls(start_time, end_time)
+        #                         available_hall_ids = [hall['hall_id'] for hall in available_halls]
+
+        #                         if hall_id in available_hall_ids:
+        #                             # print("hall available")
+        #                             booking = Booking(hall_id, start_time, end_time)
+        #                             booking_id = self.db.insert_hall_booking(booking.__dict__)
+        #                             self.logger.info(f"Booking successful for hall {hall_id}. Booking ID: {booking_id}")
+
+        #                             return f"Booking successful for hall {hall_id}. Booking ID: {booking_id}"
+        #                         else:
+        #                             return "Hall is already booked for the given time slot."
+        #                     finally:
+        #                         # releasing hall lock
+        #                         self.db.delete_lock(hall_id, session)
+        #                 else:
+        #                     self.logger.error(f"Lock aquired failed, Hall {hall_id}, Start: {start_time}, End: {end_time}")
             
-        return "Another operation is currently modifying the database. Please try again later."
+        #     except pymongo.errors.OperationFailure as e:
+        #         if 'errorLabels' in e.details and 'TransientTransactionError' in e.details['errorLabels']:
+        #             waited_time += retry_interval
+        #             # self.logger.warning(f"Transient error encountered. Retrying transaction ...")
+        #             time.sleep(retry_interval)
+        #         else:
+        #             self.logger.error(f"Book hall failed! Hall {hall_id}, Start: {start_time}, End: {end_time}, Error: {e}")
+        #             return f"An error occurred while processing the booking: {e.details['errmsg']}"
+            
+        # return "Another operation is currently modifying the database. Please try again later."
 
         
     def fetch_available_halls(self, start_time, end_time) -> list[dict]:
@@ -241,6 +319,128 @@ class BookingController:
 
 
     def update_booking(self, short_booking_id, new_start_time, new_end_time) -> str:
+        self.logger.info(f"Received update request: Booking ID: {short_booking_id}, New Start: {new_start_time}, New End: {new_end_time}")
+
+        if not self.verify_time_range(new_start_time, new_end_time):
+            return "Error: End time must be after start time. Please try again."
+        
+        booking = self.db.find_booking(short_booking_id)
+
+        if not booking:
+            return f"Booking with ID {short_booking_id} not found."
+
+        hall_id = booking['hall_id']
+        booking_id = booking['booking_id']
+
+        conflict_query = {
+        "hall_id": hall_id,
+        "booking_id": {"$ne": booking_id},  # Exclude the current booking
+        "$and": [
+            {"start_time": {"$lt": new_end_time}}, 
+            {"end_time": {"$gt": new_start_time}}
+        ]
+        }
+
+        # Update query to find the specific booking_id and update it
+        update_query = {
+            "hall_id": hall_id,
+            "booking_id": booking_id,
+            "start_time": {"$ne": new_start_time},  # Ensure it hasn't already been updated
+            "end_time": {"$ne": new_end_time}
+        }
+
+        # Combined query to ensure that the update only occurs if no conflicts are found
+        query = {
+            "$and": [
+                {"$nor": [conflict_query]},  # Ensure no conflicts
+                {"booking_id": booking_id}  # Target the specific booking_id
+            ]
+        }
+
+
+        query = {
+        "$and": [
+            {
+                "$or": [
+                    # Check for overlapping bookings
+                    {"start_time": {"$lt": new_end_time}, "end_time": {"$gt": new_start_time}},
+                    {"start_time": {"$lte": new_start_time}, "end_time": {"$gte": new_end_time}},
+                ]
+            },
+            {
+                "$or": [
+                    # Include the target booking in the query
+                    {"_id": booking_id},
+                    # Exclude conflicting bookings with the same hall ID
+                    {"hall_id": hall_id, "booking_id": {"$ne": booking_id}}
+                ]
+            }
+        ]
+        }
+
+        # The update operation
+        update = {
+            "$set": {
+                "start_time": new_start_time,
+                "end_time": new_end_time
+            }
+        }
+        # print("tryinggggggg")
+
+
+        pipeline = [
+        {
+            "$match": {
+                "hall_id": hall_id,
+                "booking_id": {"$ne": booking_id},  # Excluding the provided booking_id
+                "$or": [
+                    {"start_time": {"$lt": new_end_time}}, 
+                    {"end_time": {"$gt": new_start_time}}
+                ]
+            }
+        },
+        {
+            "$count": "conflict_count"  # Count the number of conflicts
+        },
+        {
+            "$merge": {
+                "into": "bookings",
+                "whenMatched": "merge",
+                "whenNotMatched": "fail"
+            }
+        },
+        {
+            "$merge": {
+                "into": "bookings",
+                "whenMatched": {
+                    "$set": {"start_time": new_start_time, "end_time": new_end_time}
+                },
+                "whenNotMatched": "fail"
+            }
+        }
+        ]
+
+        result = self.db.update_2(booking_id, new_start_time, new_end_time, hall_id)
+        # result = self.db.find_one_and_update(booking_id, search_query, update_query,hall_id)
+        # result = self.bookings.find_one_and_update(
+        #     {'booking_id': booking_id, **search_query},
+        #     update_query,
+        #     upsert=False,  # We don't want to insert if the booking_id doesn't exist
+        #     return_document=False  # Returns the original document before update
+        # )
+        # print("sdfsdaf")
+        print("res=",result)
+        # if result.matched_count > 0:
+        #     self.logger.info(f"updation Unsuccessful for hall {hall_id}. Hall already booked!")
+        #     return f"Booking with ID {short_booking_id} has been updated successfully."
+
+        # else:
+        #     print("update done")
+        #     # Updating the booking ID in inserted record
+        return "not sure of update"
+
+
+    def update_booking_old(self, short_booking_id, new_start_time, new_end_time) -> str:
         """
         Update the start and end times of an existing booking.
 

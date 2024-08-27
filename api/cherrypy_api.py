@@ -1,7 +1,5 @@
 import cherrypy
-import json
 from pymongo import MongoClient
-from datetime import datetime
 from utils.logger import setup_logger
 from controller.booking_controller import BookingController
 
