@@ -49,3 +49,26 @@
 2024-08-21 15:20:02,973 - INFO - Received booking request: Hall F, Start: 2024-07-15T10:00:00, End: 2024-07-15T12:00:00
 2024-08-21 16:30:42,847 - INFO - Received fetch available hall request: Start: 2024-08-01T10:00:00, End: 2024-08-30T11:00:00
 2024-08-27 11:33:07,124 - INFO - Received fetch available hall request: Start: 2024-08-01T10:00:00, End: 2024-08-30T11:00:00
+2024-08-27 17:40:31,614 - INFO - Received fetch available hall request: Start: 2024-08-01T10:00:00, End: 2024-08-30T11:00:00, Capacity: 100
+2024-08-27 17:40:52,311 - INFO - Received fetch available hall request: Start: 2024-08-01T10:00:00, End: 2024-08-03T11:00:00, Capacity: 100
+2024-08-27 17:41:06,105 - INFO - Received fetch available hall request: Start: 2024-06-01T10:00:00, End: 2024-06-03T11:00:00, Capacity: 100
+2024-08-27 17:41:16,318 - INFO - Received fetch available hall request: Start: 2024-06-01T10:00:00, End: 2024-06-03T11:00:00, Capacity: 50
+2024-08-27 17:41:24,321 - INFO - Received fetch available hall request: Start: 2024-06-01T10:00:00, End: 2024-06-03T11:00:00, Capacity: 500
+2024-08-28 10:24:47,585 - INFO - Received fetch available hall request: Start: 2024-06-01T10:00:00, End: 2024-06-03T11:00:00, Capacity: 500
+2024-08-28 10:25:14,043 - INFO - Received booking request: Hall F, Start: 2024-07-15T10:00:00, End: 2024-07-15T12:00:00, capcacity: 250
+2024-08-28 10:26:04,600 - INFO - Received fetch bookings request: Start: 2024-08-01, End: 2024-08-30
+2024-08-28 10:26:43,568 - INFO - Received fetch bookings request: Start: 2024-08-01, End: 2024-08-30
+2024-08-28 10:35:20,386 - INFO - Received update request: Booking ID: 7fceea, Start: 2024-08-03T10:00:00, End: 2024-08-03T11:00:00, Capacity: 200
+2024-08-28 10:35:30,868 - INFO - Received update request: Booking ID: 7fceea, Start: 2024-08-03T10:00:00, End: 2024-08-03T11:00:00, Capacity: 20
+2024-08-28 10:36:07,778 - INFO - Received update request: Booking ID: 7fceea, Start: 2024-08-03T10:00:00, End: 2024-08-03T11:00:00, Capacity: 20
+2024-08-28 10:38:16,367 - INFO - Received update request: Booking ID: 7fceea, Start: 2024-08-03T10:00:00, End: 2024-08-03T11:00:00, Capacity: 2
+2024-08-28 10:39:05,197 - INFO - Received update request: Booking ID: 7fceea, Start: 2024-08-03T10:00:00, End: 2024-08-03T11:00:00, Capacity: 20
+2024-08-28 10:39:19,486 - INFO - Received update request: Booking ID: 7fceea, Start: 2024-08-03T10:00:00, End: 2024-08-03T11:00:00, Capacity: 20
+2024-08-28 10:40:54,391 - INFO - Received update request: Booking ID: 7fceea, Start: 2024-08-03T10:00:00, End: 2024-08-03T11:00:00, Capacity: 20
+2024-08-28 10:40:56,127 - INFO - Received update request: Booking ID: 7fceea, Start: 2024-08-03T10:00:00, End: 2024-08-03T11:00:00, Capacity: 20
+2024-08-28 10:41:02,002 - INFO - Received update request: Booking ID: 7fceea, Start: 2024-08-03T10:00:00, End: 2024-08-03T11:00:00, Capacity: 20
+2024-08-28 10:43:51,435 - INFO - Received update request: Booking ID: 7fceea, Start: 2024-08-03T10:00:00, End: 2024-08-03T11:00:00, Capacity: 20
+2024-08-28 10:43:53,129 - INFO - Received update request: Booking ID: 7fceea, Start: 2024-08-03T10:00:00, End: 2024-08-03T11:00:00, Capacity: 20
+2024-08-28 10:43:54,343 - INFO - Received update request: Booking ID: 7fceea, Start: 2024-08-03T10:00:00, End: 2024-08-03T11:00:00, Capacity: 20
+2024-08-28 10:45:51,869 - INFO - Received cancellation request: Booking ID: 7fceea
+2024-08-28 10:45:54,365 - INFO - Received cancellation request: Booking ID: 7fceea

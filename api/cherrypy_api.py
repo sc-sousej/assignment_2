@@ -28,8 +28,9 @@ class BookingAPI:
             data = cherrypy.request.json
             start_time = data.get("start_time")
             end_time = data.get("end_time")
-            self.logger.info(f"Received fetch available hall request: Start: {start_time}, End: {end_time}")
-            available_halls = self.booking_controller.fetch_available_halls(start_time, end_time)
+            capacity = data.get("capacity")
+            self.logger.info(f"Received fetch available hall request: Start: {start_time}, End: {end_time}, Capacity: {capacity}")
+            available_halls = self.booking_controller.fetch_available_halls(start_time, end_time, capacity)
             return available_halls
         except Exception as e:
             self.logger.error("Invalid Input for fetch available request")
@@ -45,8 +46,9 @@ class BookingAPI:
             hall_id = data.get("hall_id")
             start_time = data.get("start_time")
             end_time = data.get("end_time")
-            self.logger.info(f"Received booking request: Hall {hall_id}, Start: {start_time}, End: {end_time}")
-            result = self.booking_controller.book_hall(hall_id, start_time, end_time)
+            capacity = data.get("capacity")
+            self.logger.info(f"Received booking request: Hall {hall_id}, Start: {start_time}, End: {end_time}, capcacity: {capacity}")
+            result = self.booking_controller.book_hall(hall_id, start_time, end_time, capacity)
             return {"result": result}
         except:
             self.logger.error("Invalid Input for book hall request")
@@ -64,7 +66,8 @@ class BookingAPI:
                 hall_id = booking_data.get("hall_id")
                 start_time = booking_data.get("start_time")
                 end_time = booking_data.get("end_time")
-                result.append(self.booking_controller.book_hall(hall_id, start_time, end_time))
+                capacity = booking_data.get("capacity")
+                result.append(self.booking_controller.book_hall(hall_id, start_time, end_time, capacity))
             return {"result": result}
         except:
             self.logger.error("Invalid Input for book multiple halls request")
@@ -114,8 +117,9 @@ class BookingAPI:
             booking_id = data.get("booking_id")
             new_start_time = data.get("new_start_time")
             new_end_time = data.get("new_end_time")
-            self.logger.info(f'Received update request: Booking ID: {booking_id}, Start: {new_start_time}, End: {new_end_time}')
-            result = self.booking_controller.update_booking(booking_id, new_start_time, new_end_time)
+            capacity = data.get("capacity")
+            self.logger.info(f'Received update request: Booking ID: {booking_id}, Start: {new_start_time}, End: {new_end_time}, Capacity: {capacity}')
+            result = self.booking_controller.update_booking(booking_id, new_start_time, new_end_time,capacity)
             return {"result": result}
         except Exception as e:
             self.logger.error("Invalid Input for update booking request",e)

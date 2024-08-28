@@ -17,7 +17,7 @@ from controller.booking_controller import BookingController
 def test_fetch_available_halls():
     controller = BookingController()
     # print("call")
-    available_halls = controller.fetch_available_halls("2024-08-01T10:00:00", "2024-08-01T12:00:00")
+    available_halls = controller.fetch_available_halls("2024-08-01T10:00:00", "2024-08-01T12:00:00",500)
     print("ans=",available_halls)
     # assert "A" in available_halls  # Example assertion
     # {"available_halls":[{'hall_id':'A',"capacity":50},{'hall_id':'B',"capacity":100}]}
@@ -25,17 +25,17 @@ def test_fetch_available_halls():
 
 def test_fetch_all_booked_halls():
     controller = BookingController()
-    all_booked_halls = controller.fetch_bookings("2024-08-01", "2024-08-30")
+    all_booked_halls = controller.fetch_bookings("2024-08-01", "2024-08-01")
     # assert "A" in available_halls  # Example assertion
     print("hello",all_booked_halls)
     
 
-def test_book_hall():
+def test_book_hall1():
     # print("start 1")
     controller = BookingController()
     print(controller)
     # time.sleep(3)
-    result = controller.book_hall("A", "2024-08-03T07:00:00", "2024-08-03T12:00:00")
+    result = controller.book_hall("C", "2024-08-03T07:00:00", "2024-08-03T12:00:00",200)
     # controller.book_hall()
     print(result)
     # assert result == "Booking successful"
@@ -46,7 +46,7 @@ def test_book_hall2():
     controller = BookingController()
     print(controller)
     # time.sleep(3)
-    result = controller.book_hall("D", "2024-09-20T09:00:00", "2024-09-20T12:00:00")
+    result = controller.book_hall("C", "2024-08-03T07:00:00", "2024-08-03T12:00:00",200)
     # controller.book_hall()
     print(result)
     # assert result == "Booking successful"
@@ -57,7 +57,7 @@ def test_book_hall3():
     controller = BookingController()
     print(controller)
     # time.sleep(3)
-    result = controller.book_hall("D", "2024-09-20T07:00:00", "2024-09-20T11:00:00")
+    result = controller.book_hall("C", "2024-08-03T07:00:00", "2024-08-03T12:00:00",200)
     # controller.book_hall()
     print(result)
     # assert result == "Booking successful"
@@ -76,13 +76,13 @@ def test_book_multiple_halls():
 
 def test_delete_booking():
     controller = BookingController()
-    result = controller.cancel_booking("1ac742")
+    result = controller.cancel_booking("09ef00")
     print(result)
 
 def test_update_booking():
     controller = BookingController()
     # controller.update_booking()
-    result = controller.update_booking("ec40d6","2024-08-03T07:23:00","2024-08-03T10:15:00")
+    result = controller.update_booking("7fe4d0","2024-08-03T07:00:00","2024-08-03T12:00:00",200)
     print(result)
 
 # service = BookingController()
@@ -96,7 +96,7 @@ def test_update_booking():
 # test_fetch_available_halls()
 # test_fetch_all_booked_halls()
 # test_book_multiple_halls()
-test_book_hall()
+# test_book_hall()
 
 # lock_controller = LockManager()
 
@@ -126,22 +126,22 @@ test_book_hall()
 # print(datetime.fromisoformat(dateStr))
 
 
-# thread1 = threading.Thread(target=test_book_hall1)
-# thread2 = threading.Thread(target=test_book_hall2)
+thread1 = threading.Thread(target=test_book_hall1)
+thread2 = threading.Thread(target=test_update_booking)
 # thread3 = threading.Thread(target=test_book_hall3)
 
-# # Start the threads
-# print("started 1")
-# thread1.start()
-# # time.sleep(7)
-# print("started 2")
-# thread2.start()
+# Start the threads
+print("started 1")
+thread1.start()
+# time.sleep(7)
+print("started 2")
+thread2.start()
 # # time.sleep(7)
 # print("started 3")
 # thread3.start()
 
-# # Wait for all threads to complete
-# thread1.join()
-# thread2.join()
+# Wait for all threads to complete
+thread1.join()
+thread2.join()
 # thread3.join()
-# print("All threads have finished execution.")
+print("All threads have finished execution.")
