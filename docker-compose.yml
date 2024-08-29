@@ -1,0 +1,41 @@
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    ports:
+      - 27017:27017
+    
+
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=admin
+
+    volumes:
+      - mongodb:/data/db
+      - mongoconfig:/data/configdb
+
+    networks:
+      - hall_booking
+
+
+  myapp:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: myapp
+    depends_on:
+      - mongodb
+    environment:
+      MONGO_URL: mongodb://admin:admin@mongodb:27017/exampledb
+    ports:
+      - 8081:8081
+    networks:
+      - hall_booking
+
+volumes:
+  mongodb:
+  mongoconfig:
+
+networks:
+  hall_booking:
+    driver: bridge

@@ -16,7 +16,7 @@ class TestBookingConcurrency(unittest.TestCase):
             result = self.controller.book_hall(hall_id, start_time, end_time, capacity)
             # print(result)
             if "successful" in result:
-                self.booking_ids.append(result[-6:])  #  for later verification
+                self.booking_ids.append(result[-24:])  # storing booking ID for later verification
                 # print("appended",self.booking_ids)
 
 
@@ -44,7 +44,7 @@ class TestBookingConcurrency(unittest.TestCase):
         def book_same_slot(hall_id, start_time, end_time, capacity):
             result = self.controller.book_hall(hall_id, start_time, end_time, capacity)
             if "successful" in result:
-                self.booking_ids.append(result[-6:])  #  for later verification
+                self.booking_ids.append(result[-24:])  #  for later verification
                 # print("appended",self.booking_ids)
 
 

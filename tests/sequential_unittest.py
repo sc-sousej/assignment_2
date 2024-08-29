@@ -19,7 +19,7 @@ class TestBookingcontroller(unittest.TestCase):
 
     def test_02_book_hall(self):
         result = self.controller.book_hall("F", "2024-07-01T10:00:00", "2024-08-02T12:00:00",800)
-        self.__class__.test_booking_id = result[-6:]  # Store the booking ID for other tests
+        self.__class__.test_booking_id = result[-24:]  # Store the booking ID for other tests
         self.assertIn("successful", result)
 
     def test_03_book_multiple_halls(self):

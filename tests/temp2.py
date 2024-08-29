@@ -82,7 +82,7 @@ def test_delete_booking():
 def test_update_booking():
     controller = BookingController()
     # controller.update_booking()
-    result = controller.update_booking("7fe4d0","2024-08-03T07:00:00","2024-08-03T12:00:00",200)
+    result = controller.update_booking("7fe8c4","2024-08-03T07:00:00","2024-08-03T12:00:00",200)
     print(result)
 
 # service = BookingController()

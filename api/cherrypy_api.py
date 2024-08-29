@@ -6,13 +6,17 @@ from controller.booking_controller import BookingController
 class BookingAPI:
 
     def __init__(self):
+        """
+        Initialize the BookingAPI instance.
+
+        Sets up the booking controller, MongoDB client, and logger.
+        """
         self.booking_controller = BookingController()
         self.client = MongoClient("mongodb://localhost:27017/")
         self.logger = setup_logger("booking_api.log")
 
     @cherrypy.expose
     @cherrypy.tools.json_out()
-    # @cherrypy.tools.json_in()
     def home(self):
         print("welcome to seminar booking")
         return {"result":"seminar booking"}
@@ -22,9 +26,15 @@ class BookingAPI:
     @cherrypy.tools.json_out()
     @cherrypy.tools.json_in()
     def fetch_available(self):
-        
+        """
+        Fetch available halls based on the provided criteria.
+
+        Expects JSON input with keys: 'start_time', 'end_time', and 'capacity'.
+
+        Returns:
+            dict: A dictionary containing available halls or an error message.
+        """
         try:
-            # hall_id = data.get("hall_id")
             data = cherrypy.request.json
             start_time = data.get("start_time")
             end_time = data.get("end_time")
@@ -41,6 +51,14 @@ class BookingAPI:
     @cherrypy.tools.json_out()
     @cherrypy.tools.json_in()
     def book_hall(self):
+        """
+        Book a hall based on the provided criteria.
+
+        Expects JSON input with keys: 'hall_id', 'start_time', 'end_time', and 'capacity'.
+
+        Returns:
+            dict: A dictionary containing the result of the booking operation or an error message.
+        """
         try:
             data = cherrypy.request.json
             hall_id = data.get("hall_id")
@@ -59,6 +77,14 @@ class BookingAPI:
     @cherrypy.tools.json_out()
     @cherrypy.tools.json_in()
     def book_multiple(self):
+        """
+        Book multiple halls based on the provided criteria.
+
+        Expects JSON input with a 'bookings' key containing a list of booking details.
+
+        Returns:
+            dict: A dictionary containing the results of each booking operation or an error message.
+        """
         try:
             data = cherrypy.request.json
             result = []
@@ -78,7 +104,14 @@ class BookingAPI:
     @cherrypy.tools.json_out()
     @cherrypy.tools.json_in()
     def fetch_bookings(self):
-        
+        """
+        Fetch booking records based on the provided date range.
+
+        Expects JSON input with keys: 'start_date' and 'end_date'.
+
+        Returns:
+            dict: A dictionary containing the bookings or an error message.
+        """
         try:
             data = cherrypy.request.json
             start_date = data.get("start_date")
@@ -95,7 +128,14 @@ class BookingAPI:
     @cherrypy.tools.json_out()
     @cherrypy.tools.json_in()
     def cancel_booking(self):
-        
+        """
+        Cancel a booking based on the provided booking ID.
+
+        Expects JSON input with a 'booking_id' key.
+
+        Returns:
+            dict: A dictionary containing the result of the cancellation operation or an error message.
+        """
         try:
             data = cherrypy.request.json
             booking_id = data.get("booking_id")
@@ -111,7 +151,14 @@ class BookingAPI:
     @cherrypy.tools.json_out()
     @cherrypy.tools.json_in()
     def update_booking(self):
-        
+        """
+        Update a booking based on the provided booking ID and new details.
+
+        Expects JSON input with keys: 'booking_id', 'new_start_time', 'new_end_time', and 'capacity'.
+
+        Returns:
+            dict: A dictionary containing the result of the update operation or an error message.
+        """
         try:
             data = cherrypy.request.json
             booking_id = data.get("booking_id")
@@ -127,7 +174,7 @@ class BookingAPI:
 
 if __name__ == '__main__':
     cherrypy.config.update({
-        'server.socket_host': '127.0.0.1',
+        'server.socket_host': '0.0.0.0',
         'server.socket_port': 8081,
     })
     cherrypy.quickstart(BookingAPI(), '/')
